@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d010t5qxfdoua"]
+
+[ext_resource type="Script" uid="uid://dujuvem8qd6g8" path="res://player/player.gd" id="1_0tyyh"]
+[ext_resource type="Script" uid="uid://omsrneq4b0tv" path="res://components/gravity_component.gd" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0tyyh"]
+
+[sub_resource type="Curve" id="Curve_rkbax"]
+_limits = [0.0, 5.0, -0.3, 1.0]
+_data = [Vector2(-0.3, 0), 0.0, 0.0, 0, 0, Vector2(0.55654204, 2.3595507), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yw30f"]
+_limits = [0.0, 5.0, 0.0, 30.0]
+_data = [Vector2(16.121496, 0.95505667), 0.0, 0.0, 0, 0, Vector2(30, 5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody3D" unique_id=1543801142]
+script = ExtResource("1_0tyyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1854307872]
+shape = SubResource("CapsuleShape3D_0tyyh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41145656]
+mesh = SubResource("CapsuleMesh_0tyyh")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=284116684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.670239)
+
+[node name="GravityComponent" type="Node" parent="." unique_id=930892148 node_paths=PackedStringArray("player")]
+script = ExtResource("2_rkbax")
+player = NodePath("..")
+gravity_curve = SubResource("Curve_rkbax")
+jump_start = -0.3
+metadata/_custom_type_script = "uid://omsrneq4b0tv"
+
+[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component")]
+script = ExtResource("3_g1dw6")
+player = NodePath("..")
+gravity_component = NodePath("../GravityComponent")
+metadata/_custom_type_script = "uid://dpxymuet07e4f"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1685333201 node_paths=PackedStringArray("player")]
+script = ExtResource("4_yw30f")
+player = NodePath("..")
+grounded_acceleration = 2.0
+friction = SubResource("Curve_yw30f")
+metadata/_custom_type_script = "uid://c3214t8lqeebx"

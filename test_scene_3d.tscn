@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cwgqokgtduvjs"]
+
+[ext_resource type="PackedScene" uid="uid://d010t5qxfdoua" path="res://player/player.tscn" id="1_qytyp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_krl60"]
+size = Vector3(52.648438, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qytyp"]
+
+[node name="Node3D" type="Node3D" unique_id=2125828843]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2136663127]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=620340531]
+shape = SubResource("BoxShape3D_krl60")
+
+[node name="Player" parent="." unique_id=1543801142 instance=ExtResource("1_qytyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5924468, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=196509368]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1727600163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.2620916, 0)
+mesh = SubResource("CylinderMesh_qytyp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=816510718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.89301, 7.2620916, 0)
+mesh = SubResource("CylinderMesh_qytyp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1950201484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9024315, 7.2620916, 0)
+mesh = SubResource("CylinderMesh_qytyp")
