@@ -12,15 +12,21 @@ var airborne : bool = true
 @onready var gravity_component : GravityComponent = $GravityComponent
 
 func _ready() -> void:
+	
 	pass
 
 func _physics_process(delta: float) -> void:
+	
+	if is_on_floor():
+		internal_velocity.y = 0
+	else:
+		gravity_component.gravity(delta)
 	jump_component.process()
-	gravity_component.gravity(delta)
 	
 	movement_component.walk()
 	movement_component.decelerate()
 	
 	velocity = internal_velocity
+	print(velocity)
 	move_and_slide()
 	pass

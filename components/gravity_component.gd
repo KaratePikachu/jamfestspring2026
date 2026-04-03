@@ -8,11 +8,12 @@ extends Node
 @export var fall_start : float
 
 var air_time : float
-var grounded : bool
+var grounded : bool = false
 
 func gravity(delta : float) -> void:
 	if not player.is_on_floor():
 		if grounded:
+			print("FAALL")
 			on_fall()
 			grounded = false
 		
@@ -20,11 +21,18 @@ func gravity(delta : float) -> void:
 	
 		
 		player.internal_velocity.y -= gravity_curve.sample(air_time)
+	else:
+		grounded = true
 
 func on_fall() -> void:
 	print("fall")
-	air_time = fall_start
+	air_time = jump_start
 
 func on_jump() -> void:
 	print("jump")
 	air_time = jump_start
+	grounded = false
+
+func on_double_jump() -> void:
+	print("djump")
+	air_time = fall_start
