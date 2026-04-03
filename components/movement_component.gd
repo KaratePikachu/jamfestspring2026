@@ -3,7 +3,7 @@ extends Node
 
 @export var player : Player
 
-@export var grounded_acceleration : float = 1
+@export var grounded_acceleration : float = 2
 @export var friction : Curve
 
 func jump_boost() -> void:

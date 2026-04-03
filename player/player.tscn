@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d010t5qxfdoua"]
 
 [ext_resource type="Script" uid="uid://dujuvem8qd6g8" path="res://player/player.gd" id="1_0tyyh"]
+[ext_resource type="Texture2D" uid="uid://do3ylfya1d0ax" path="res://celeste.jpg" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://omsrneq4b0tv" path="res://components/gravity_component.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
@@ -15,8 +16,8 @@ _data = [Vector2(-0.3, 0), 0.0, 0.0, 0, 0, Vector2(0.55654204, 2.3595507), 0.0, 
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_yw30f"]
-_limits = [0.0, 5.0, 0.0, 30.0]
-_data = [Vector2(16.121496, 0.95505667), 0.0, 0.0, 0, 0, Vector2(30, 5), 0.0, 0.0, 0, 0]
+_limits = [1.0, 5.0, 0.0, 30.0]
+_data = [Vector2(16.542057, 1), 0.0, 0.0, 0, 0, Vector2(30, 5), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody3D" unique_id=1543801142]
@@ -27,6 +28,11 @@ shape = SubResource("CapsuleShape3D_0tyyh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41145656]
 mesh = SubResource("CapsuleMesh_0tyyh")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=1495105326]
+transform = Transform3D(1.6741884, 0, 0, 0, 1.6741884, 0, 0, 0, 1, 0, -0.7807107, 0)
+visible = false
+texture = ExtResource("2_qjkh3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=284116684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.670239)
@@ -42,11 +48,11 @@ metadata/_custom_type_script = "uid://omsrneq4b0tv"
 script = ExtResource("3_g1dw6")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
+buffer_frames = 10
 metadata/_custom_type_script = "uid://dpxymuet07e4f"
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1685333201 node_paths=PackedStringArray("player")]
 script = ExtResource("4_yw30f")
 player = NodePath("..")
-grounded_acceleration = 2.0
 friction = SubResource("Curve_yw30f")
 metadata/_custom_type_script = "uid://c3214t8lqeebx"

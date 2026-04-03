@@ -15,7 +15,6 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	
 	jump_component.process()
 	gravity_component.gravity(delta)
 	
