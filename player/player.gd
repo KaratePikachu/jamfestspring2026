@@ -10,6 +10,7 @@ var airborne : bool = true
 @onready var movement_component : MovementComponent = $MovementComponent
 @onready var jump_component : JumpComponent = $JumpComponent
 @onready var gravity_component : GravityComponent = $GravityComponent
+@onready var rewind_component : RewindComponent = $RewindComponent
 
 func _ready() -> void:
 	
@@ -27,6 +28,9 @@ func _physics_process(delta: float) -> void:
 	movement_component.decelerate()
 	
 	velocity = internal_velocity
-	print(velocity)
+	#print(velocity)
 	move_and_slide()
+	
+	if rewind_component.recording:
+		rewind_component.record_position()
 	pass

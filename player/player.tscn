@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://omsrneq4b0tv" path="res://components/gravity_component.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component.gd" id="6_g6k8r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
 
@@ -17,8 +18,15 @@ point_count = 2
 
 [sub_resource type="Curve" id="Curve_yw30f"]
 _limits = [1.0, 5.0, 0.0, 30.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(15, 2), 0.0, 0.0, 0, 0, Vector2(25, 3), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(15, 2), 0.0, 0.0, 0, 0, Vector2(25, 3), 0.0, 0.0, 0, 0, Vector2(30, 5), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_qjkh3"]
+_limits = [1.0, 5.0, 0.0, 40.0]
+_data = [Vector2(29.6, 1.9438205), 0.0, 0.0, 0, 0, Vector2(40, 3.0224721), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_g6k8r"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1543801142]
 script = ExtResource("1_0tyyh")
@@ -43,14 +51,29 @@ player = NodePath("..")
 gravity_curve = SubResource("Curve_rkbax")
 metadata/_custom_type_script = "uid://omsrneq4b0tv"
 
-[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component")]
+[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component", "movement_component")]
 script = ExtResource("3_g1dw6")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
+movement_component = NodePath("../MovementComponent")
 metadata/_custom_type_script = "uid://dpxymuet07e4f"
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1685333201 node_paths=PackedStringArray("player")]
 script = ExtResource("4_yw30f")
 player = NodePath("..")
 friction = SubResource("Curve_yw30f")
+sprint_friction = SubResource("Curve_qjkh3")
 metadata/_custom_type_script = "uid://c3214t8lqeebx"
+
+[node name="RewindComponent" type="Node" parent="." unique_id=1208336863 node_paths=PackedStringArray("player", "gravity_component", "rewind_path", "path_follow")]
+script = ExtResource("6_g6k8r")
+player = NodePath("..")
+gravity_component = NodePath("../GravityComponent")
+rewind_path = NodePath("RewindPath")
+path_follow = NodePath("RewindPath/PathFollow3D")
+metadata/_custom_type_script = "uid://da4k1fsrg3ne7"
+
+[node name="RewindPath" type="Path3D" parent="RewindComponent" unique_id=1188445725]
+curve = SubResource("Curve3D_g6k8r")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="RewindComponent/RewindPath" unique_id=609109677]

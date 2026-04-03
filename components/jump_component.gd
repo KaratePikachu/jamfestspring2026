@@ -3,6 +3,7 @@ extends Node
 
 @export var player : Player
 @export var gravity_component : GravityComponent
+@export var movement_component : MovementComponent
 
 @export var buffer_frames : int = 8
 
@@ -20,7 +21,7 @@ func process() -> void:
 	
 	
 	
-	if Input.is_action_just_pressed("jump") or remaining_buffer > 0:
+	if not movement_component.sprinting and (Input.is_action_just_pressed("jump") or remaining_buffer > 0):
 		if player.is_on_floor():
 			if remaining_buffer > 0:
 				print("WAVEDASH")
