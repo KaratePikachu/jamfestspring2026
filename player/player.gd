@@ -27,10 +27,13 @@ func _physics_process(delta: float) -> void:
 	movement_component.walk()
 	movement_component.decelerate()
 	
-	velocity = internal_velocity
-	#print(velocity)
-	move_and_slide()
-	
 	if rewind_component.recording:
 		rewind_component.record_position()
+	rewind_component.process()
+	
+	velocity = internal_velocity
+	print(velocity)
+	move_and_slide()
+	
+	
 	pass

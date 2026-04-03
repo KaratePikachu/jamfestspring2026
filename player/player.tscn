@@ -56,6 +56,7 @@ script = ExtResource("3_g1dw6")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
 movement_component = NodePath("../MovementComponent")
+horizontal_boost_amount = 20.0
 metadata/_custom_type_script = "uid://dpxymuet07e4f"
 
 [node name="MovementComponent" type="Node" parent="." unique_id=1685333201 node_paths=PackedStringArray("player")]

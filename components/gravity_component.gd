@@ -29,10 +29,10 @@ func on_fall() -> void:
 	air_time = jump_start
 
 func on_jump() -> void:
-	print("jump")
+	#print("jump")
 	air_time = jump_start
 	grounded = false
 
 func on_double_jump() -> void:
-	print("djump")
+	#print("djump")
 	air_time = fall_start
