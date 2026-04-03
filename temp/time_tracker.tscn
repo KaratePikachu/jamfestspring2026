@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpdvnv55g5oph"]
+
+[ext_resource type="Script" uid="uid://cfnbtktifb3pf" path="res://temp/time_tracker.gd" id="1_m1jh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1jh0"]
+size = Vector3(1, 7.181885, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m1jh0"]
+
+[node name="TimeTracker" type="Area3D" unique_id=1621998994]
+script = ExtResource("1_m1jh0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=477391761]
+shape = SubResource("BoxShape3D_m1jh0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=984073807]
+transform = Transform3D(1, 0, 0, 0, 7.5574303, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_m1jh0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	rewind_component.process()
 	
 	velocity = internal_velocity
-	print(velocity)
+	#print(velocity)
 	move_and_slide()
 	
 	
