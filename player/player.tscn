@@ -64,11 +64,11 @@ friction = SubResource("Curve_yw30f")
 sprint_friction = SubResource("Curve_qjkh3")
 metadata/_custom_type_script = "uid://c3214t8lqeebx"
 
-[node name="RewindComponent" type="Node" parent="." unique_id=1208336863 node_paths=PackedStringArray("player", "gravity_component", "rewind_path", "path_follow")]
+[node name="RewindComponent" type="Node" parent="." unique_id=1208336863 node_paths=PackedStringArray("player", "gravity_component", "player_model", "rewind_path", "path_follow")]
 script = ExtResource("6_g6k8r")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
-player_model = ExtResource("2_boad6")
+player_model = NodePath("../PlayerModel")
 rewind_path = NodePath("RewindPath")
 path_follow = NodePath("RewindPath/PathFollow3D")
 metadata/_custom_type_script = "uid://da4k1fsrg3ne7"

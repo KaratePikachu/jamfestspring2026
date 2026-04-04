@@ -4,7 +4,11 @@ extends Node3D
 @export var player : Player
 @export var animation_player : AnimationPlayer
 
+@export var white_material : StandardMaterial3D
+
 var jumping : bool = false
+
+@export var meshes : Array[MeshInstance3D]
 
 func jump() -> void:
 	jumping = true
@@ -26,3 +30,7 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("Skeleton|Walk",0.2)
 	else:
 		animation_player.play("Skeleton|Idle",0.2)
+
+func become_white() -> void:
+	for mesh : MeshInstance3D in meshes:
+		mesh.material_override = white_material

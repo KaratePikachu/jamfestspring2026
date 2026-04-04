@@ -35,6 +35,8 @@ func decelerate() -> void:
 		amount = sprint_friction.sample(absf(player.velocity.x))
 	else:
 		amount = friction.sample(absf(player.velocity.x))
+	
+	
 	player.internal_velocity.x = move_toward(player.internal_velocity.x,0,amount)
 	#print(player.internal_velocity)
 

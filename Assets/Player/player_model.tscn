@@ -3,9 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bstr5abk84i7h" path="res://Assets/Player/Player.fbx" id="1_qge56"]
 [ext_resource type="Script" uid="uid://bdx301h1aidu2" path="res://Assets/Player/player_model.gd" id="2_65e0t"]
 
-[node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_qge56")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65e0t"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.4117647)
+
+[node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player", "meshes") instance=ExtResource("1_qge56")]
 script = ExtResource("2_65e0t")
 animation_player = NodePath("AnimationPlayer")
+white_material = SubResource("StandardMaterial3D_65e0t")
+meshes = [NodePath("Skeleton/Skeleton3D/Hand L2"), NodePath("Skeleton/Skeleton3D/Hand R2"), NodePath("Skeleton/Skeleton3D/Head2"), NodePath("Skeleton/Skeleton3D/LowerArm L"), NodePath("Skeleton/Skeleton3D/LowerArm R"), NodePath("Skeleton/Skeleton3D/Shin L2"), NodePath("Skeleton/Skeleton3D/Shin R2"), NodePath("Skeleton/Skeleton3D/Thigh L2"), NodePath("Skeleton/Skeleton3D/Thigh R2"), NodePath("Skeleton/Skeleton3D/Torso"), NodePath("Skeleton/Skeleton3D/UpperArm L"), NodePath("Skeleton/Skeleton3D/UpperArm R"), NodePath("Skeleton/Skeleton3D/Wheels L"), NodePath("Skeleton/Skeleton3D/Wheels R")]
 
 [node name="Skeleton" parent="." index="0" unique_id=35283100]
 transform = Transform3D(29.4, 0, 0, 0, -7.009506e-06, 29.399998, 0, -29.399998, -7.009506e-06, 0, -0.114, 0)
