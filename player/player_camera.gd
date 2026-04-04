@@ -14,11 +14,15 @@ func _physics_process(delta: float) -> void:
 	var target : Vector3 = Vector3(player.global_position.x,player.global_position.y,global_position.z)
 	target.x += Input.get_axis("move_left","move_right") * 1.5
 	
-	var dist : float = global_position.distance_to(target)
-	print(dist)
+	var dist_x : float = absf(global_position.x-target.x)
+	var dist_y : float = absf(global_position.y-target.y)
 	
-	if not is_zero_approx(dist):
+	print(dist_y)
+	
+	if not is_zero_approx(dist_x) or not is_zero_approx(dist_y) :
 		
-		var travel : float = follow_curve.sample(dist)
+		var travel_x : float = follow_curve.sample(dist_x)
+		var travel_y : float = follow_curve.sample(dist_y)*0.25
 		
-		global_position = global_position.move_toward(target,travel)
+		global_position.x = move_toward(global_position.x,target.x,travel_x)
+		global_position.y = move_toward(global_position.y,target.y,travel_y)

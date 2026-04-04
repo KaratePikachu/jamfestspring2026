@@ -13,9 +13,9 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0tyyh"]
 
 [sub_resource type="Curve" id="Curve_rkbax"]
-_limits = [0.0, 5.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.51500005, 1.2359548), 0.0, 0.0, 0, 0]
-point_count = 2
+_limits = [0.0, 5.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.51500005, 1.2359548), 0.0, 0.0, 0, 0, Vector2(4.0999994, 1.2921352), 0.0, 0.0, 0, 0, Vector2(5.8999996, 5), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="Curve" id="Curve_yw30f"]
 _limits = [1.0, 5.0, 0.0, 40.0]
@@ -84,5 +84,6 @@ curve = SubResource("Curve3D_g6k8r")
 
 [node name="PlayerCamera" parent="." unique_id=1656216160 node_paths=PackedStringArray("player") instance=ExtResource("7_boad6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.67)
+v_offset = 1.5
 player = NodePath("..")
 follow_curve = SubResource("Curve_boad6")
