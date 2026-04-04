@@ -7,12 +7,12 @@ extends Node
 
 @export var slam_bounce_window : int = 8
 
-@export var slam_jump_strength : float = 15
-@export var normal_jump_strength : float = 11
+@export var slam_jump_strength : float = 11
+@export var normal_jump_strength : float = 8
 
 @export var double_jump_strength : float = -15
 
-@export var horizontal_boost_amount : float = 15
+@export var horizontal_boost_amount : float = 10
 
 var has_double_jump : bool = false
 var remaining_bounce_window : int = 0
