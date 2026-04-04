@@ -1,6 +1,7 @@
 class_name RewindComponent
 extends Node
 
+
 @export var player : Player
 @export var gravity_component : GravityComponent
 
@@ -16,7 +17,6 @@ var recording : bool = false
 var rewinding : bool = false
 var ready_to_launch : bool = false
 var ghost_trail : Array[PlayerModel] = []
-var ghost_trash : Array[PlayerModel] = []
 
 var og_position : Vector3
 var launch_vector : Vector3
@@ -27,9 +27,9 @@ func _ready() -> void:
 
 func process() -> void:
 	
-	if ghost_trash.size() > 0 and randi_range(0,100) > 70:
-		var next_freed : PlayerModel = ghost_trash.pop_back()
-		next_freed.queue_free()
+	#if ghost_trash.size() > 0 and randi_range(0,100) > 70:
+		#var next_freed : PlayerModel = ghost_trash.pop_back()
+		#next_freed.queue_free()
 		
 	if remaining_rewind_cooldown > 0:
 		remaining_rewind_cooldown -= 1
@@ -42,7 +42,7 @@ func process() -> void:
 		recording = false
 		rewinding = true
 		var num_points : int = rewind_path.curve.point_count
-		print(num_points)
+		#print(num_points)
 		
 		var curve : Curve3D = rewind_path.curve
 		launch_vector *= clampf(5*rewind_path.curve.point_count,0,30)
@@ -61,7 +61,6 @@ func process() -> void:
 		
 		gravity_component.on_jump()
 		gravity_component.grounded = false
-		#print("internal vel ", player.internal_velocity)
 		ready_to_launch = true
 		remaining_rewind_cooldown = rewind_cooldown_frames
 		rewinding = false
@@ -73,8 +72,9 @@ func rewind() -> void:
 	if float(ghost_trail.size()*2.0+1.5)/curve.point_count > path_follow.progress_ratio: #total points
 		var removal : PlayerModel = ghost_trail.pop_back()
 		if removal != null:
-			removal.hide()
-			ghost_trash.append(removal)
+			#removal.hide()
+			removal.queue_free()
+			creation_count -= 1
 		
 func launch() -> void:
 	player.global_position = og_position
@@ -82,10 +82,10 @@ func launch() -> void:
 	rewind_path.curve.clear_points()
 	
 	
-	for m : PlayerModel in ghost_trail:
-		m.hide()
-	ghost_trash.append_array(ghost_trail)
-	ghost_trail.clear()
+	while ghost_trail.size() > 0:
+		var next_thing : PlayerModel = ghost_trail.pop_back()
+		next_thing.queue_free()
+		creation_count -= 1
 	ready_to_launch = false
 
 func record_position() -> void:
@@ -105,7 +105,7 @@ func record_position() -> void:
 		rewind_path.curve.add_point(player.global_position)
 		
 	if num_points / 2 > ghost_trail.size():
-		var new_model : PlayerModel = player_model.duplicate()
+		var new_model : PlayerModel = player_model.duplicate()s
 		new_model.player = null
 		new_model.become_white()
 		new_model.position = player.position

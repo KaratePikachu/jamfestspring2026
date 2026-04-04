@@ -38,9 +38,9 @@ func _physics_process(delta: float) -> void:
 		rewind_component.record_position()
 	rewind_component.process()
 	
-	print(internal_velocity)
-	
-	
+	#print(internal_'velocity)
+	#print(rewind_component.creation_count)
+	#assert(rewind_component.creation_count == rewind_component.ghost_trail.size())
 	velocity = internal_velocity
 	#print(velocity)
 	move_and_slide()
