@@ -5,8 +5,9 @@
 [ext_resource type="Script" uid="uid://omsrneq4b0tv" path="res://components/gravity_component.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
-[ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component.gd" id="6_g6k8r"]
+[ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component/rewind_component.gd" id="6_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://b4eq7g7whim6q" path="res://player/player_camera.tscn" id="7_boad6"]
+[ext_resource type="PackedScene" uid="uid://k3lb8wxjqgry" path="res://components/rewind_component/rewind_particles.tscn" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
 
@@ -82,3 +83,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.67)
 v_offset = 1.5
 player = NodePath("..")
 follow_curve = SubResource("Curve_boad6")
+
+[node name="RewindParticles" parent="." unique_id=1446145170 instance=ExtResource("8_rgyib")]
+visible = false

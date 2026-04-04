@@ -7,6 +7,9 @@ extends Node
 @export var rewind_path : Path3D
 @export var path_follow : PathFollow3D
 
+@export var rewind_cooldown_frames : int = 60
+
+var remaining_rewind_cooldown : float = 0
 var recording : bool = false
 var rewinding : bool = false
 var ready_to_launch : bool = false
@@ -18,11 +21,14 @@ func _ready() -> void:
 	assert(rewind_path != null, "Null Rewind Path")
 
 func process() -> void:
-	if Input.is_action_just_pressed("rewind"):
+	if remaining_rewind_cooldown > 0:
+		remaining_rewind_cooldown -= 1
+	
+	if Input.is_action_just_pressed("rewind") and remaining_rewind_cooldown == 0:
 		recording = true
 		og_position = player.global_position
 		launch_vector = player.internal_velocity.rotated(Vector3.FORWARD,deg_to_rad(180)).normalized()
-	elif Input.is_action_just_released("rewind"):
+	elif Input.is_action_just_released("rewind") and recording:
 		recording = false
 		
 		var num_points : int = rewind_path.curve.point_count
@@ -46,6 +52,7 @@ func process() -> void:
 		gravity_component.grounded = false
 		print("internal vel ", player.internal_velocity)
 		ready_to_launch = true
+		remaining_rewind_cooldown = rewind_cooldown_frames
 		rewinding = false
 
 func rewind() -> void:

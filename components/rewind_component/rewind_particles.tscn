@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://k3lb8wxjqgry"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_khnl7"]
+radius = 0.1
+height = 0.2
+
+[node name="RewindParticles" type="CPUParticles3D" unique_id=1446145170]
+amount = 30
+mesh = SubResource("SphereMesh_khnl7")
+emission_shape = 3
+emission_box_extents = Vector3(0.25, 1, 0.25)
+gravity = Vector3(0, 0, 0)
