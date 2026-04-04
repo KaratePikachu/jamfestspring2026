@@ -13,14 +13,15 @@ var airborne : bool = true
 @onready var rewind_component : RewindComponent = $RewindComponent
 
 func _ready() -> void:
-	
 	pass
 
 func _physics_process(delta: float) -> void:
 	
 	
-	if is_on_floor() and not rewind_component.ready_to_launch:
-		internal_velocity.y = 0
+	if rewind_component.rewinding or rewind_component.ready_to_launch:
+		gravity_component.on_jump()
+	elif is_on_floor():
+		internal_velocity.y = max(0,internal_velocity.y)
 		pass
 	else:
 		gravity_component.gravity(delta)
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		rewind_component.record_position()
 	rewind_component.process()
 	
+	print(internal_velocity)
 	
 	
 	velocity = internal_velocity
