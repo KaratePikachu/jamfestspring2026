@@ -18,8 +18,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if is_on_floor():
+	
+	if is_on_floor() and not rewind_component.ready_to_launch:
 		internal_velocity.y = 0
+		pass
 	else:
 		gravity_component.gravity(delta)
 	jump_component.process()
@@ -27,13 +29,21 @@ func _physics_process(delta: float) -> void:
 	movement_component.walk()
 	movement_component.decelerate()
 	
-	if rewind_component.recording:
+	if rewind_component.ready_to_launch:
+		rewind_component.launch()
+	elif rewind_component.rewinding:
+		rewind_component.rewind()
+	elif rewind_component.recording:
 		rewind_component.record_position()
 	rewind_component.process()
+	
+	
 	
 	velocity = internal_velocity
 	#print(velocity)
 	move_and_slide()
 	
+	if is_zero_approx(velocity.x):
+		internal_velocity.x = 0
 	
 	pass

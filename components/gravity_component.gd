@@ -25,14 +25,11 @@ func gravity(delta : float) -> void:
 		grounded = true
 
 func on_fall() -> void:
-	print("fall")
 	air_time = jump_start
 
 func on_jump() -> void:
-	#print("jump")
 	air_time = jump_start
 	grounded = false
 
 func on_double_jump() -> void:
-	#print("djump")
 	air_time = fall_start

@@ -23,7 +23,7 @@ point_count = 4
 
 [sub_resource type="Curve" id="Curve_qjkh3"]
 _limits = [1.0, 5.0, 0.0, 40.0]
-_data = [Vector2(29.6, 1.9438205), 0.0, 0.0, 0, 0, Vector2(40, 3.0224721), 0.0, 0.0, 0, 0]
+_data = [Vector2(29.4, 1.8539329), 0.0, 0.0, 0, 0, Vector2(40, 3.0224721), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_g6k8r"]
