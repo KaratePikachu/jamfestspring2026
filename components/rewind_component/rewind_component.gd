@@ -4,6 +4,8 @@ extends Node
 @export var player : Player
 @export var gravity_component : GravityComponent
 
+@export var player_model : PackedScene
+
 @export var rewind_path : Path3D
 @export var path_follow : PathFollow3D
 
@@ -13,6 +15,7 @@ var remaining_rewind_cooldown : float = 0
 var recording : bool = false
 var rewinding : bool = false
 var ready_to_launch : bool = false
+var ghost_trail : Array[PlayerModel] = []
 
 var og_position : Vector3
 var launch_vector : Vector3
@@ -63,6 +66,9 @@ func launch() -> void:
 	player.global_position = og_position
 	player.internal_velocity = launch_vector
 	rewind_path.curve.clear_points()
+	for model : PlayerModel in ghost_trail:
+		model.queue_free()
+	ghost_trail.clear()
 	ready_to_launch = false
 
 func record_position() -> void:
@@ -80,4 +86,10 @@ func record_position() -> void:
 	
 	if should_add_point:
 		rewind_path.curve.add_point(player.global_position)
+		
+	if num_points / 2 > ghost_trail.size():
+		var new_model : PlayerModel = player_model.instantiate()
+		new_model.position = player.position
+		player.add_sibling(new_model)
+		ghost_trail.append(new_model)
 	

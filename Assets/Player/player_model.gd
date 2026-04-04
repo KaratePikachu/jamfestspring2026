@@ -13,6 +13,9 @@ func jump() -> void:
 	jumping = false
 
 func _physics_process(delta: float) -> void:
+	if player == null:
+		return
+	
 	if jumping:
 		return
 	if not is_zero_approx(player.velocity.x):

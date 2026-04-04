@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component/rewind_component.gd" id="6_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://b4eq7g7whim6q" path="res://player/player_camera.tscn" id="7_boad6"]
-[ext_resource type="PackedScene" uid="uid://k3lb8wxjqgry" path="res://components/rewind_component/rewind_particles.tscn" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
 
@@ -40,7 +39,7 @@ script = ExtResource("1_0tyyh")
 shape = SubResource("CapsuleShape3D_0tyyh")
 
 [node name="PlayerModel" parent="." unique_id=979262629 node_paths=PackedStringArray("player") instance=ExtResource("2_boad6")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1.0556064, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 player = NodePath("..")
 
 [node name="GravityComponent" type="Node" parent="." unique_id=930892148 node_paths=PackedStringArray("player")]
@@ -69,6 +68,7 @@ metadata/_custom_type_script = "uid://c3214t8lqeebx"
 script = ExtResource("6_g6k8r")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
+player_model = ExtResource("2_boad6")
 rewind_path = NodePath("RewindPath")
 path_follow = NodePath("RewindPath/PathFollow3D")
 metadata/_custom_type_script = "uid://da4k1fsrg3ne7"
@@ -83,6 +83,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.67)
 v_offset = 1.5
 player = NodePath("..")
 follow_curve = SubResource("Curve_boad6")
-
-[node name="RewindParticles" parent="." unique_id=1446145170 instance=ExtResource("8_rgyib")]
-visible = false
