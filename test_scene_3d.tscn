@@ -9,7 +9,7 @@ size = Vector3(146.08618, 1, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_qytyp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qytyp"]
-size = Vector3(1, 4.4101563, 1)
+size = Vector3(1, 12.860901, 1)
 
 [node name="Node3D" type="Node3D" unique_id=2125828843]
 
@@ -49,7 +49,14 @@ mesh = SubResource("CylinderMesh_qytyp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.44811, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1936028802]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7050781, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3332214, 0)
+shape = SubResource("BoxShape3D_qytyp")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=227588874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.024414, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=2076148100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3023071, 0)
 shape = SubResource("BoxShape3D_qytyp")
 
 [node name="TimeTracker" parent="." unique_id=1621998994 instance=ExtResource("2_ujp4j")]

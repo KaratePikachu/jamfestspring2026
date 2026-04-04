@@ -26,7 +26,7 @@ func process() -> void:
 		grant_jump_boost()
 	
 	
-	if not movement_component.sprinting and Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		if player.is_on_floor():
 			jump(normal_jump_strength)
 		elif has_double_jump:
@@ -52,4 +52,6 @@ func grant_jump_boost() -> void:
 	var dir : float = player.internal_velocity.x
 	if not is_zero_approx(dir):
 		var boost_dir : int = 1 if dir > 0 else -1
+		if movement_component.sprinting:
+			boost_dir *= 0.3
 		player.internal_velocity.x += horizontal_boost_amount * boost_dir

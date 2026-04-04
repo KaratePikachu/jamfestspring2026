@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component.gd" id="6_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://b4eq7g7whim6q" path="res://player/player_camera.tscn" id="7_boad6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
 
@@ -28,6 +29,11 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_g6k8r"]
 
+[sub_resource type="Curve" id="Curve_boad6"]
+_limits = [0.0, 1.0, 0.0, 15.0]
+_data = [Vector2(0, 0.08988774), 0.0, 0.0, 0, 0, Vector2(3.1999998, 0.48314613), 0.0, 0.0, 0, 0, Vector2(4.8750005, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Player" type="CharacterBody3D" unique_id=1543801142]
 script = ExtResource("1_0tyyh")
 
@@ -41,9 +47,6 @@ mesh = SubResource("CapsuleMesh_0tyyh")
 transform = Transform3D(1.6741884, 0, 0, 0, 1.6741884, 0, 0, 0, 1, 0, -0.7807107, 0)
 visible = false
 texture = ExtResource("2_qjkh3")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=284116684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.670239)
 
 [node name="GravityComponent" type="Node" parent="." unique_id=930892148 node_paths=PackedStringArray("player")]
 script = ExtResource("2_rkbax")
@@ -78,3 +81,8 @@ metadata/_custom_type_script = "uid://da4k1fsrg3ne7"
 curve = SubResource("Curve3D_g6k8r")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="RewindComponent/RewindPath" unique_id=609109677]
+
+[node name="PlayerCamera" parent="." unique_id=1656216160 node_paths=PackedStringArray("player") instance=ExtResource("7_boad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.67)
+player = NodePath("..")
+follow_curve = SubResource("Curve_boad6")

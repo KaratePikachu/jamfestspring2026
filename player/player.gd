@@ -43,7 +43,6 @@ func _physics_process(delta: float) -> void:
 	#print(velocity)
 	move_and_slide()
 	
-	if is_zero_approx(velocity.x):
-		internal_velocity.x = 0
+	movement_component.wall_tech()
 	
 	pass

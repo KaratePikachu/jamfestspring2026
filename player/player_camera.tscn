@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4eq7g7whim6q"]
+
+[ext_resource type="Script" uid="uid://dolag268lymtq" path="res://player/player_camera.gd" id="1_itl3e"]
+
+[node name="PlayerCamera" type="Camera3D" unique_id=1656216160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+top_level = true
+script = ExtResource("1_itl3e")
+metadata/_custom_type_script = "uid://dolag268lymtq"

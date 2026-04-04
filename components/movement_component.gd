@@ -6,6 +6,7 @@ extends Node
 @export var walk_acceleration : float = 2
 @export var friction : Curve
 @export var sprint_friction : Curve
+@export var wall_decceleration : float = 0.8
 
 var sprinting : bool = false
 
@@ -36,3 +37,11 @@ func decelerate() -> void:
 		amount = friction.sample(absf(player.velocity.x))
 	player.internal_velocity.x = move_toward(player.internal_velocity.x,0,amount)
 	#print(player.internal_velocity)
+
+func wall_tech() -> void:
+	if is_zero_approx(player.velocity.x): ##Slam into wall
+		if player.internal_velocity.dot(Vector3(Input.get_axis("move_left","move_right"),0,0)) <= -10:
+			print("Wall Flick")
+			player.internal_velocity.x = -player.internal_velocity.x
+		else:
+			player.internal_velocity.x *= wall_decceleration
