@@ -11,6 +11,9 @@ size = Vector3(146.08618, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qytyp"]
 size = Vector3(1, 12.860901, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujp4j"]
+size = Vector3(4.0151367, 1, 1)
+
 [node name="Node3D" type="Node3D" unique_id=2125828843]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2136663127]
@@ -64,3 +67,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.372776, 3.4275074, 0)
 
 [node name="TimeTracker2" parent="." unique_id=2052181499 instance=ExtResource("2_ujp4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.930885, 3.4275074, 0)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=486779397]
+transform = Transform3D(0.8871719, -0.46143898, 0, 0.46143898, 0.8871719, 0, 0, 0, 1, 26.95768, 0.9328879, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=1412585012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5075684, 0, 0)
+shape = SubResource("BoxShape3D_ujp4j")
