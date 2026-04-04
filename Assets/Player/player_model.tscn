@@ -5,7 +5,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65e0t"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.4117647)
+albedo_color = Color(1, 1, 1, 0.16862746)
 
 [node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player", "meshes") instance=ExtResource("1_qge56")]
 script = ExtResource("2_65e0t")

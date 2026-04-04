@@ -70,7 +70,7 @@ func rewind() -> void:
 	player.internal_velocity = Vector3.ZERO
 	player.global_position = path_follow.global_position
 	var curve : Curve3D = rewind_path.curve
-	if (float(ghost_trail.size()-1.5))/(curve.get_baked_length()) >= path_follow.progress_ratio: #total points
+	if float(ghost_trail.size()*2.0+1.5)/curve.point_count > path_follow.progress_ratio: #total points
 		var removal : PlayerModel = ghost_trail.pop_back()
 		if removal != null:
 			removal.hide()
