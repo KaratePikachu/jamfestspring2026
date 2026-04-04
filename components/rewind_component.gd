@@ -6,7 +6,6 @@ extends Node
 
 @export var rewind_path : Path3D
 @export var path_follow : PathFollow3D
-@export var remote_transform : RemoteTransform3D
 
 var recording : bool = false
 var rewinding : bool = false

@@ -17,9 +17,9 @@ func _physics_process(delta: float) -> void:
 	var dist_x : float = absf(global_position.x-target.x)
 	var dist_y : float = absf(global_position.y-target.y)
 	
-	print(dist_y)
+	#print(dist_y)
 	
-	if not is_zero_approx(dist_x) or not is_zero_approx(dist_y) :
+	if not is_zero_approx(dist_x) or not is_zero_approx(dist_y):
 		
 		var travel_x : float = follow_curve.sample(dist_x)
 		var travel_y : float = follow_curve.sample(dist_y)*0.25

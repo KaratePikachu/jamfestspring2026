@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://tlsx6hl0fl4u"]
+
+[ext_resource type="PackedScene" uid="uid://bstr5abk84i7h" path="res://Assets/Player/Player.fbx" id="1_qge56"]
+[ext_resource type="Script" uid="uid://bdx301h1aidu2" path="res://Assets/Player/player_model.gd" id="2_65e0t"]
+
+[node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_qge56")]
+script = ExtResource("2_65e0t")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(238267612) index="0" unique_id=1180483881]
+bones/1/rotation = Quaternion(0.9831589, -0.043111004, -0.0058534015, 0.17749923)
+bones/2/rotation = Quaternion(0.2706701, -0.007652483, 0.021756481, 0.96239597)
+bones/6/rotation = Quaternion(0.043619353, 4.6039874e-15, -1.0399664e-08, 0.99904823)
+bones/10/rotation = Quaternion(-0.25157043, -0.0011145796, -0.010716413, 0.9677791)
+bones/37/rotation = Quaternion(-0.4619801, 0.50933826, -0.49605557, 0.5301678)
+bones/38/rotation = Quaternion(-0.27828538, 0.0033519038, 0.035011083, 0.95985425)
+bones/64/rotation = Quaternion(0.95233023, 0.034184895, 0.008019816, 0.30304155)
+bones/65/rotation = Quaternion(0.3921374, 0.006879903, -0.024076363, 0.9195659)
+bones/68/rotation = Quaternion(-0.6997213, 0, 0, 0.7144159)
+bones/70/rotation = Quaternion(-0.6997213, 0, 0, 0.7144159)

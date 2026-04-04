@@ -5,6 +5,8 @@ extends Node
 @export var gravity_component : GravityComponent
 @export var movement_component : MovementComponent
 
+@export var player_model : PlayerModel
+
 @export var slam_bounce_window : int = 8
 
 @export var slam_jump_strength : float = 11
@@ -33,6 +35,7 @@ func process() -> void:
 			double_jump()
 
 func jump(strength : float) -> void:
+	player_model.jump()
 	player.internal_velocity.y = strength
 	has_double_jump = true
 	gravity_component.on_jump()

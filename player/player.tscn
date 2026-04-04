@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d010t5qxfdoua"]
 
 [ext_resource type="Script" uid="uid://dujuvem8qd6g8" path="res://player/player.gd" id="1_0tyyh"]
-[ext_resource type="Texture2D" uid="uid://do3ylfya1d0ax" path="res://celeste.jpg" id="2_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://tlsx6hl0fl4u" path="res://Assets/Player/player_model.tscn" id="2_boad6"]
 [ext_resource type="Script" uid="uid://omsrneq4b0tv" path="res://components/gravity_component.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dpxymuet07e4f" path="res://components/jump_component.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b4eq7g7whim6q" path="res://player/player_camera.tscn" id="7_boad6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0tyyh"]
 
 [sub_resource type="Curve" id="Curve_rkbax"]
 _limits = [0.0, 5.0, 0.0, 10.0]
@@ -40,13 +38,9 @@ script = ExtResource("1_0tyyh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1854307872]
 shape = SubResource("CapsuleShape3D_0tyyh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41145656]
-mesh = SubResource("CapsuleMesh_0tyyh")
-
-[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=1495105326]
-transform = Transform3D(1.6741884, 0, 0, 0, 1.6741884, 0, 0, 0, 1, 0, -0.7807107, 0)
-visible = false
-texture = ExtResource("2_qjkh3")
+[node name="PlayerModel" parent="." unique_id=979262629 node_paths=PackedStringArray("player") instance=ExtResource("2_boad6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1.0556064, 0)
+player = NodePath("..")
 
 [node name="GravityComponent" type="Node" parent="." unique_id=930892148 node_paths=PackedStringArray("player")]
 script = ExtResource("2_rkbax")
@@ -54,11 +48,12 @@ player = NodePath("..")
 gravity_curve = SubResource("Curve_rkbax")
 metadata/_custom_type_script = "uid://omsrneq4b0tv"
 
-[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component", "movement_component")]
+[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component", "movement_component", "player_model")]
 script = ExtResource("3_g1dw6")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
 movement_component = NodePath("../MovementComponent")
+player_model = NodePath("../PlayerModel")
 horizontal_boost_amount = 20.0
 metadata/_custom_type_script = "uid://dpxymuet07e4f"
 
