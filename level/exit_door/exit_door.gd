@@ -8,7 +8,7 @@ func _physics_process(delta: float) -> void:
 	
 	for body : Node3D in get_overlapping_bodies():
 		if body is Player:
-			if body.is_on_floor() and not body.player_model.winning:
+			if body.is_on_floor() and not body.player_model.winning and not body.losing:
 				$Gate.open()
 				level.win(body)
 				

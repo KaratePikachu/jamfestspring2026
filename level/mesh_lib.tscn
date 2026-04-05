@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://crxrgr01u5bbq"]
 
+[ext_resource type="Material" uid="uid://wbk4vjsx85pj" path="res://level/WallTexture.tres" id="1_tyqlv"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_6ly18"]
+material = ExtResource("1_tyqlv")
 size = Vector3(4, 2, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_plxut"]
 size = Vector3(4, 2, 4)
 
 [sub_resource type="PrismMesh" id="PrismMesh_6ly18"]
+material = ExtResource("1_tyqlv")
 left_to_right = 1.0
 size = Vector3(4, 2, 4)
 
@@ -16,7 +20,6 @@ points = PackedVector3Array(2, -1, 2, 2, -1, -2, -2, -1, -2, -2, -1, 2, 2, 1, 2,
 [node name="MeshLib" type="Node3D" unique_id=1337695061]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1082683326]
-visible = false
 mesh = SubResource("BoxMesh_6ly18")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1148673291]
@@ -25,6 +28,7 @@ mesh = SubResource("BoxMesh_6ly18")
 shape = SubResource("BoxShape3D_plxut")
 
 [node name="Ramp" type="MeshInstance3D" parent="." unique_id=920888967]
+visible = false
 mesh = SubResource("PrismMesh_6ly18")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ramp" unique_id=2095217168]

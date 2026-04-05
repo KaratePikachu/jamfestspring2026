@@ -2,6 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dhv3a8b07vq6e" path="res://level/level_base.tscn" id="1_hby2w"]
 [ext_resource type="FontFile" uid="uid://bjmysapvfhjs6" path="res://Assets/public-pixel-font/PublicPixel-rv0pA.ttf" id="3_aspk5"]
+[ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="3_hby2w"]
+[ext_resource type="PackedScene" uid="uid://d2flqi5b2k0du" path="res://Assets/Environment/Barrel/Barrel.fbx" id="4_iea1r"]
+[ext_resource type="PackedScene" uid="uid://xpnst6ktv7r7" path="res://Assets/Environment/Door/Door.fbx" id="5_aspk5"]
+[ext_resource type="PackedScene" uid="uid://cj3ece51e36hn" path="res://Assets/Environment/Wheel/Wheel.fbx" id="6_qfgrg"]
+
+[sub_resource type="Gradient" id="Gradient_blww0"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5137255, 0.5137255, 0.5137255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jhgna"]
+gradient = SubResource("Gradient_blww0")
+fill_to = Vector2(1, 1)
 
 [node name="Level5" unique_id=1165694411 instance=ExtResource("1_hby2w")]
 level_num = 5
@@ -22,3 +34,40 @@ font = ExtResource("3_aspk5")
 
 [node name="ExitDoor" parent="." index="6" unique_id=1259731798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 12.2, 0)
+
+[node name="Sprite3D5" type="Sprite3D" parent="ExitDoor" index="2" unique_id=1505454012]
+transform = Transform3D(148.0797, 0, 0, 0, 68.83118, 0, 0, 0, 1, -24.47839, -3.2679863, -2)
+texture = SubResource("GradientTexture2D_jhgna")
+
+[node name="Battery" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="0" unique_id=33444232 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.8677741, 0, 0.4969588, 0, 1, 0, -0.4969588, 0, 0.8677741, 6.4698906, -7.9876204, -1.0321932)
+
+[node name="Battery2" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="1" unique_id=623942204 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.7546295, 0, 0.6561513, 0, 1, 0, -0.6561513, 0, 0.7546295, 7.0838156, -7.9876204, -1.6495564)
+
+[node name="Battery3" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="2" unique_id=1346318363 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.7546295, 0, 0.6561513, 0, 1, 0, -0.6561513, 0, 0.7546295, 6.7201405, -7.426448, -1.324642)
+
+[node name="Battery4" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="3" unique_id=1467836961 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.52889764, 0, -0.84868574, 0, 1, 0, 0.84868574, 0, 0.52889764, 12.9632435, -7.9876204, -1.8192812)
+
+[node name="Battery5" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="4" unique_id=2017467583 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.6837706, 0, -0.7296969, 0, 1, 0, 0.7296969, 0, 0.6837706, 13.603019, -7.9876204, -1.2287483)
+
+[node name="Battery6" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="5" unique_id=1021417192 instance=ExtResource("3_hby2w")]
+transform = Transform3D(0.6837706, 0, -0.7296969, 0, 1, 0, 0.7296969, 0, 0.6837706, 13.083444, -7.426448, -1.3975052)
+
+[node name="Barrel" parent="." index="12" unique_id=683287488 instance=ExtResource("4_iea1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.324104, 12, -1.3472137)
+
+[node name="Door2" parent="." index="13" unique_id=667405259 instance=ExtResource("5_aspk5")]
+transform = Transform3D(2.7515373, 0, 0, 0, 2.7515373, 0, 0, 0, 1, 29.987879, 11.882885, -1.9944458)
+
+[node name="Wheel" parent="." index="14" unique_id=883719870 instance=ExtResource("6_qfgrg")]
+transform = Transform3D(0.9398477, 0.34159368, 0, -0.34159368, 0.9398477, 0, 0, 0, 1, 21.789268, 4.36, -1.6163286)
+
+[node name="Wheel2" parent="." index="15" unique_id=75956134 instance=ExtResource("6_qfgrg")]
+transform = Transform3D(0.8013863, 0.29126903, 0.5224391, -0.34159374, 0.9398478, 0, -0.49101317, -0.1784619, 0.85267663, 21.789268, 4.36, -0.8118254)
+
+[node name="Wheel3" parent="." index="16" unique_id=212598108 instance=ExtResource("6_qfgrg")]
+transform = Transform3D(0.8710072, -0.082714885, 0.4842569, -0.015892332, 0.980464, 0.19605573, -0.49101317, -0.17846188, 0.8526766, 21.91806, 4.932768, -1.2956907)
