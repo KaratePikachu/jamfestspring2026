@@ -12,5 +12,9 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
+[node name="PauseMenu" parent="CanvasLayer/Control" parent_id_path=PackedInt32Array(973910376) index="1" unique_id=1026193892]
+layout_mode = 1
+anchors_preset = 15
+
 [node name="ExitDoor" parent="." index="5" unique_id=1259731798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 2.2, 0)
