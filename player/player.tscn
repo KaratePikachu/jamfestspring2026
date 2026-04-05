@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://c3214t8lqeebx" path="res://components/movement_component.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://da4k1fsrg3ne7" path="res://components/rewind_component/rewind_component.gd" id="6_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://b4eq7g7whim6q" path="res://player/player_camera.tscn" id="7_boad6"]
+[ext_resource type="AudioStream" uid="uid://baasj2fq744qg" path="res://player/jump/jump_random.tres" id="8_rgyib"]
+[ext_resource type="AudioStream" uid="uid://bmmi1otio0h6j" path="res://player/jump/wavedash_random.tres" id="9_hg6s5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0tyyh"]
 
@@ -54,12 +56,14 @@ player = NodePath("..")
 gravity_curve = SubResource("Curve_rkbax")
 metadata/_custom_type_script = "uid://omsrneq4b0tv"
 
-[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component", "movement_component", "player_model")]
+[node name="JumpComponent" type="Node" parent="." unique_id=1412861570 node_paths=PackedStringArray("player", "gravity_component", "movement_component", "player_model", "jump_sound", "wavedash_sound")]
 script = ExtResource("3_g1dw6")
 player = NodePath("..")
 gravity_component = NodePath("../GravityComponent")
 movement_component = NodePath("../MovementComponent")
 player_model = NodePath("../PlayerModel")
+jump_sound = NodePath("../JumpSound")
+wavedash_sound = NodePath("../WavedashSound")
 horizontal_boost_amount = 20.0
 metadata/_custom_type_script = "uid://dpxymuet07e4f"
 
@@ -90,3 +94,9 @@ v_offset = 1.5
 player = NodePath("..")
 follow_curve = SubResource("Curve_boad6")
 follow_curve_y = SubResource("Curve_rgyib")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=265739299]
+stream = ExtResource("8_rgyib")
+
+[node name="WavedashSound" type="AudioStreamPlayer" parent="." unique_id=1740175625]
+stream = ExtResource("9_hg6s5")

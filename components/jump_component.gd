@@ -7,6 +7,9 @@ extends Node
 
 @export var player_model : PlayerModel
 
+@export var jump_sound : AudioStreamPlayer
+@export var wavedash_sound : AudioStreamPlayer
+
 @export var slam_bounce_window : int = 8
 
 @export var slam_jump_strength : float = 11
@@ -37,6 +40,7 @@ func process() -> void:
 	
 	if Input.is_action_just_pressed("jump"):
 		if player.is_on_floor():
+			jump_sound.play()
 			jump(normal_jump_strength)
 		elif has_double_jump:
 			double_jump()
@@ -60,6 +64,7 @@ func double_jump() -> void:
 	#remaining_boosts = ramp_boot_limit
 	
 func grant_jump_boost() -> void:
+	wavedash_sound.play()
 	print("jump boost")
 	var dir : float = player.internal_velocity.x
 	if not is_zero_approx(dir):

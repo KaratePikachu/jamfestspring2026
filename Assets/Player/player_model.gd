@@ -5,6 +5,7 @@ signal finished_win_animation
 
 @export var player : Player
 @export var animation_player : AnimationPlayer
+@export var sound_player : AnimationPlayer
 
 @export var white_material : StandardMaterial3D
 
@@ -42,6 +43,7 @@ func lose_animation() -> void:
 func _physics_process(delta: float) -> void:
 	if player == null:
 		return
+	$PlayerSounds/AudioStreamPlayer.volume_db = 0 if player.is_on_floor() else -99
 	
 	if winning or player.losing:
 		return
@@ -53,6 +55,7 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("Skeleton|Sprint",0.2)
 		else:
 			animation_player.play("Skeleton|Walk",0.2)
+			sound_player.play("Walk",0.2)
 	else:
 		animation_player.play("Skeleton|Idle",0.2)
 

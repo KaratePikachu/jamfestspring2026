@@ -2,14 +2,52 @@
 
 [ext_resource type="PackedScene" uid="uid://bstr5abk84i7h" path="res://Assets/Player/Player.fbx" id="1_qge56"]
 [ext_resource type="Script" uid="uid://bdx301h1aidu2" path="res://Assets/Player/player_model.gd" id="2_65e0t"]
+[ext_resource type="AudioStream" uid="uid://dr43vcrjlf0uw" path="res://player/footsteps/footstep_random.tres" id="4_pepl0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65e0t"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.16862746)
 
-[node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player", "meshes") instance=ExtResource("1_qge56")]
+[sub_resource type="Animation" id="Animation_65e0t"]
+resource_name = "Walk"
+length = 1.6666701
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSounds/AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_pepl0")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_pepl0")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_pepl0")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_pepl0")
+}],
+"times": PackedFloat32Array(0.13333334, 0.53333336, 0.96666664, 1.4)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dr507"]
+_data = {
+&"Walk": SubResource("Animation_65e0t")
+}
+
+[node name="PlayerModel" unique_id=979262629 node_paths=PackedStringArray("animation_player", "sound_player", "meshes") instance=ExtResource("1_qge56")]
 script = ExtResource("2_65e0t")
 animation_player = NodePath("AnimationPlayer")
+sound_player = NodePath("PlayerSounds")
 white_material = SubResource("StandardMaterial3D_65e0t")
 meshes = [NodePath("Skeleton/Skeleton3D/Hand L2"), NodePath("Skeleton/Skeleton3D/Hand R2"), NodePath("Skeleton/Skeleton3D/Head2"), NodePath("Skeleton/Skeleton3D/LowerArm L"), NodePath("Skeleton/Skeleton3D/LowerArm R"), NodePath("Skeleton/Skeleton3D/Shin L2"), NodePath("Skeleton/Skeleton3D/Shin R2"), NodePath("Skeleton/Skeleton3D/Thigh L2"), NodePath("Skeleton/Skeleton3D/Thigh R2"), NodePath("Skeleton/Skeleton3D/Torso"), NodePath("Skeleton/Skeleton3D/UpperArm L"), NodePath("Skeleton/Skeleton3D/UpperArm R"), NodePath("Skeleton/Skeleton3D/Wheels L"), NodePath("Skeleton/Skeleton3D/Wheels R")]
 
@@ -30,8 +68,11 @@ bones/38/rotation = Quaternion(-0.8515906, 0.015872674, 0.06917053, 0.5193815)
 bones/64/rotation = Quaternion(0.8557758, 0.015286233, -0.0012046519, 0.5171198)
 bones/65/rotation = Quaternion(0.0027955475, 0.0031391752, -9.255013e-05, 0.99999124)
 bones/68/position = Vector3(-0.004501786, 0.0092354175, -0.019553259)
-bones/68/rotation = Quaternion(-0.6997213, 0, 0, 0.7144159)
 bones/70/position = Vector3(0.004501786, -0.019722277, -0.022011178)
-bones/70/rotation = Quaternion(-0.6997213, 0, 0, 0.7144159)
 bones/72/position = Vector3(-0.010816758, -0.021134384, 0.017770933)
 bones/74/position = Vector3(0.009126422, 0.0068967044, 0.013824936)
+
+[node name="PlayerSounds" type="AnimationPlayer" parent="." index="2" unique_id=224372290]
+libraries/ = SubResource("AnimationLibrary_dr507")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PlayerSounds" index="0" unique_id=622350127]
