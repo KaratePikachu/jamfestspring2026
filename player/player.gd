@@ -54,10 +54,3 @@ func _physics_process(delta: float) -> void:
 	movement_component.wall_tech()
 	
 	pass
-
-func win_level() -> void:
-	if player_model.winning:
-		return
-	player_model.win_animation()
-	await player_model.animation_player.animation_finished
-	get_tree().change_scene_to_file("res://ui/main_menu/main_menu.tscn")

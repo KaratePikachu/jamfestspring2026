@@ -1,4 +1,11 @@
+class_name MainMenu
 extends Node3D
+
+static var levels : Array[String] = [
+	"res://level/levels/level_1.tscn",
+	"res://level/levels/level_2.tscn",
+	
+]
 
 @export var player_model : PlayerModel
 

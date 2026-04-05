@@ -35,7 +35,7 @@ data = {
 image = SubResource("Image_my6ta")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qf64r"]
-points = PackedVector3Array(2, -1, 2, 2, -1, -2, -2, -1, -2, -2, -1, 2, 2, 1, 2)
+points = PackedVector3Array(2, -1, 2, 2, -1, -2, -2, -1, -2, -2, -1, 2, 2, 1, 2, 2, 1, -2)
 
 [resource]
 item/0/name = "Floor"

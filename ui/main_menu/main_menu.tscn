@@ -116,22 +116,18 @@ level = ExtResource("6_joh67")
 [node name="TextureButton2" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=451596219 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 2
-level = null
 
 [node name="TextureButton3" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1757372699 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 3
-level = null
 
 [node name="TextureButton4" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1174362623 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 4
-level = null
 
 [node name="TextureButton5" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1158165910 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 5
-level = null
 
 [node name="BackButton" type="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=1965101293]
 layout_mode = 2

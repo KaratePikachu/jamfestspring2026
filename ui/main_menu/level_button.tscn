@@ -6,7 +6,6 @@
 [node name="TextureButton" type="TextureButton" unique_id=817721026]
 texture_normal = ExtResource("1_8a1js")
 script = ExtResource("2_rs4s2")
-level = ""
 
 [node name="Label" type="Label" parent="." unique_id=1364258452]
 layout_mode = 1
