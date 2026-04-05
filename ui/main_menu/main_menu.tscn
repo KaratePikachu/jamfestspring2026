@@ -5,7 +5,6 @@
 [ext_resource type="Theme" uid="uid://b0a1x2jdvcbj4" path="res://Assets/theme.tres" id="3_omy8q"]
 [ext_resource type="Texture2D" uid="uid://5w2ouykpy4yl" path="res://Assets/Button.png" id="4_i5wg5"]
 [ext_resource type="PackedScene" uid="uid://djjhu4ws1hy7i" path="res://ui/main_menu/level_button.tscn" id="5_3c04x"]
-[ext_resource type="PackedScene" uid="uid://dnut7mjpy6fog" path="res://level/levels/level_1.tscn" id="6_joh67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mu8pm"]
 albedo_color = Color(0, 0, 0, 1)
@@ -93,7 +92,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelSelectButtons" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1066571871]
-visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -105,13 +103,13 @@ grow_vertical = 2
 theme_override_constants/separation = 43
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=1631954379]
+[node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=930363234]
 layout_mode = 2
+columns = 5
 
 [node name="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=817721026 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 1
-level = ExtResource("6_joh67")
 
 [node name="TextureButton2" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=451596219 instance=ExtResource("5_3c04x")]
 layout_mode = 2
@@ -128,6 +126,10 @@ number = 4
 [node name="TextureButton5" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1158165910 instance=ExtResource("5_3c04x")]
 layout_mode = 2
 number = 5
+
+[node name="TextureButton6" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=2064974172 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 6
 
 [node name="BackButton" type="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=1965101293]
 layout_mode = 2

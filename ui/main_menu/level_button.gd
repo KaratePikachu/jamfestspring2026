@@ -5,7 +5,6 @@ extends TextureButton
 	set(new_val):
 		number = new_val
 		$Label.text = ">"+str(number)
-@export var level : PackedScene
 
 
 

@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 		sprinting = true
 	
 	if event.is_action_released("sprint"):
-		player.internal_velocity.x = 0
+		#player.internal_velocity.x = 0
 		sprinting = false
 
 func jump_boost() -> void:

@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bjmysapvfhjs6" path="res://Assets/public-pixel-font/PublicPixel-rv0pA.ttf" id="3_8ctxq"]
 
 [node name="Level2" unique_id=1165694411 instance=ExtResource("1_8pmo6")]
-level_num = 1
+level_num = 2
 
 [node name="GridMap" parent="." index="0" unique_id=1669079711]
 data = {
@@ -20,5 +20,7 @@ collision_mask = 2
 level = NodePath("..")
 
 [node name="Label3D" type="Label3D" parent="." index="6" unique_id=1487950573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32534, 2.8843956, -3.1307874)
+pixel_size = 0.01
 text = "> Z To \"Sprint\""
 font = ExtResource("3_8ctxq")

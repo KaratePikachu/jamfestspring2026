@@ -45,7 +45,7 @@ func process() -> void:
 		#print(num_points)
 		
 		var curve : Curve3D = rewind_path.curve
-		launch_vector *= clampf(5*rewind_path.curve.point_count,0,30)
+		launch_vector *= clampf(1.2*rewind_path.curve.point_count,0,30)
 		
 		if num_points >= 2:
 			path_follow.progress_ratio = 1
