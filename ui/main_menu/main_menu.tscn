@@ -106,7 +106,8 @@ alignment = 1
 
 [node name="HBoxContainer" type="GridContainer" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=930363234]
 layout_mode = 2
-columns = 5
+size_flags_horizontal = 4
+columns = 3
 
 [node name="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=817721026 instance=ExtResource("5_3c04x")]
 layout_mode = 2

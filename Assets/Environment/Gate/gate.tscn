@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cn571lrc1dew6"]
+
+[ext_resource type="PackedScene" uid="uid://dwu4bqrqqur1y" path="res://Assets/Environment/Gate/Gate.fbx" id="1_1a2yg"]
+[ext_resource type="Script" uid="uid://os57ontfn4ep" path="res://Assets/Environment/Gate/gate.gd" id="2_ga8vx"]
+
+[sub_resource type="Animation" id="Animation_ghxny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlidingGate:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_nniyi"]
+resource_name = "open"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlidingGate:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 5.703]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghxny"]
+_data = {
+&"RESET": SubResource("Animation_ghxny"),
+&"open": SubResource("Animation_nniyi")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nniyi"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_nniyi"]
+material = SubResource("StandardMaterial3D_nniyi")
+size = Vector2(4, 5)
+
+[node name="Gate" unique_id=936521677 instance=ExtResource("1_1a2yg")]
+script = ExtResource("2_ga8vx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=340190324]
+libraries/ = SubResource("AnimationLibrary_ghxny")
+
+[node name="Black" type="MeshInstance3D" parent="." index="3" unique_id=1779713653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.353, -0.09)
+mesh = SubResource("QuadMesh_nniyi")

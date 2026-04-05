@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://ck78rkigcxqns" path="res://level/level_base.gd" id="1_d8qi5"]
 [ext_resource type="MeshLibrary" uid="uid://b5vjgtfi7j6hm" path="res://meshlib.tres" id="1_nmr65"]
 [ext_resource type="PackedScene" uid="uid://d010t5qxfdoua" path="res://player/player.tscn" id="2_vmt1o"]
+[ext_resource type="Theme" uid="uid://b0a1x2jdvcbj4" path="res://Assets/theme.tres" id="4_tvde0"]
+[ext_resource type="Texture2D" uid="uid://bbcq3u621f11g" path="res://Assets/battery.png" id="5_6tqrk"]
+[ext_resource type="PackedScene" uid="uid://dt67wtmvb5ghs" path="res://level/exit_door/exit_door.tscn" id="6_6tqrk"]
 
-[node name="LevelBase" type="Node3D" unique_id=1165694411]
+[node name="LevelBase" type="Node3D" unique_id=1165694411 node_paths=PackedStringArray("player")]
 script = ExtResource("1_d8qi5")
+player = NodePath("Player")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1669079711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -4, 2)
@@ -25,3 +29,42 @@ transform = Transform3D(0.9428801, 0.16656612, -0.28850096, 0, 0.8660254, 0.5, 0
 [node name="Props" type="Node3D" parent="." unique_id=660610485]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2093097310]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=973910376]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_tvde0")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1790717215]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer" unique_id=851108215]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("5_6tqrk")
+expand_mode = 5
+
+[node name="TimeLeft" type="Label" parent="CanvasLayer/Control/MarginContainer/TextureRect" unique_id=1239033527]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitDoor" parent="." unique_id=1259731798 node_paths=PackedStringArray("level") instance=ExtResource("6_6tqrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.357049, -1.7704439, 0)
+level = NodePath("..")

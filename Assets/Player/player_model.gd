@@ -1,6 +1,8 @@
 class_name PlayerModel
 extends Node3D
 
+signal finished_win_animation
+
 @export var player : Player
 @export var animation_player : AnimationPlayer
 
@@ -14,6 +16,8 @@ var winning : bool = false
 func win_animation() -> void:
 	winning = true
 	animation_player.play("Skeleton|Win",0.2)
+	await animation_player.animation_finished
+	
 
 func jump() -> void:
 	jumping = true

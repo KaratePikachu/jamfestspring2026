@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://benrklqb5lnhr"]
+
+[ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="1_6i6ts"]
+[ext_resource type="Script" uid="uid://oab7fdrs42aa" path="res://level/battery/battery.gd" id="2_8o6u6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cddfu"]
+radius = 1.3385078
+
+[node name="Battery" type="Area3D" unique_id=898852083]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_8o6u6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=380575649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2996322, 0)
+shape = SubResource("SphereShape3D_cddfu")
+
+[node name="Battery" parent="." unique_id=33444232 instance=ExtResource("1_6i6ts")]
+transform = Transform3D(0.17930214, 0, -0.9838078, 0, 1, 0, 0.9838078, 0, 0.17930214, 0, -0.057360645, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

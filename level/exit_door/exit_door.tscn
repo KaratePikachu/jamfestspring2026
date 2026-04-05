@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dt67wtmvb5ghs"]
 
 [ext_resource type="Script" uid="uid://2e277yaslwmb" path="res://level/exit_door/exit_door.gd" id="1_p4hyy"]
-[ext_resource type="Texture2D" uid="uid://bcn8gflqexwks" path="res://icon.svg" id="1_txuna"]
+[ext_resource type="PackedScene" uid="uid://cn571lrc1dew6" path="res://Assets/Environment/Gate/gate.tscn" id="2_tlwae"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_txuna"]
-size = Vector3(4, 4, 4)
+size = Vector3(2.517334, 4, 4)
 
 [node name="ExitDoor" type="Area3D" unique_id=1259731798]
 script = ExtResource("1_p4hyy")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1173931654]
-texture = ExtResource("1_txuna")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=637410670]
 shape = SubResource("BoxShape3D_txuna")
+
+[node name="Gate" parent="." unique_id=936521677 instance=ExtResource("2_tlwae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.9)
