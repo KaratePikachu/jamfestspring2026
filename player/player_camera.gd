@@ -10,7 +10,7 @@ func _ready() -> void:
 	position.z = 10.67
 	pass
 
-func _physics_process(delta: float) -> void:
+func process(delta: float) -> void:
 	var target : Vector3 = Vector3(player.global_position.x,player.global_position.y,global_position.z)
 	target.x += Input.get_axis("move_left","move_right") * 1.5
 	

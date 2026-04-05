@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://djjhu4ws1hy7i"]
+
+[ext_resource type="Texture2D" uid="uid://cy06s8sm8apr" path="res://Assets/Button Square.png" id="1_8a1js"]
+[ext_resource type="Script" uid="uid://dpwd1nbkkpiia" path="res://ui/main_menu/level_button.gd" id="2_rs4s2"]
+
+[node name="TextureButton" type="TextureButton" unique_id=817721026]
+texture_normal = ExtResource("1_8a1js")
+script = ExtResource("2_rs4s2")
+level = ""
+
+[node name="Label" type="Label" parent="." unique_id=1364258452]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = ">0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

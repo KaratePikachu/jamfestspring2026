@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://c3hpufc5addnq"]
+
+[ext_resource type="Script" uid="uid://crmr4xwe6fwyw" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
+[ext_resource type="PackedScene" uid="uid://tlsx6hl0fl4u" path="res://Assets/Player/player_model.tscn" id="1_uhj5c"]
+[ext_resource type="Theme" uid="uid://b0a1x2jdvcbj4" path="res://Assets/theme.tres" id="3_omy8q"]
+[ext_resource type="Texture2D" uid="uid://5w2ouykpy4yl" path="res://Assets/Button.png" id="4_i5wg5"]
+[ext_resource type="PackedScene" uid="uid://djjhu4ws1hy7i" path="res://ui/main_menu/level_button.tscn" id="5_3c04x"]
+[ext_resource type="PackedScene" uid="uid://dnut7mjpy6fog" path="res://level/levels/level_1.tscn" id="6_joh67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mu8pm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mu8pm"]
+material = SubResource("StandardMaterial3D_mu8pm")
+
+[node name="MainMenu" type="Node3D" unique_id=1088628585 node_paths=PackedStringArray("player_model")]
+script = ExtResource("1_mu8pm")
+player_model = NodePath("PlayerModel")
+
+[node name="PlayerModel" parent="." unique_id=979262629 instance=ExtResource("1_uhj5c")]
+transform = Transform3D(-0.53802073, 0, -0.84293157, 0, 1, 0, -0.84293157, 0, 0.53802073, 1.0740068, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=597481180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4439499)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=524621215]
+transform = Transform3D(25.844559, 0, 0, 0, 6.2923536, 0, 0, 0, 1, 0, 0, -2.1030126)
+mesh = SubResource("QuadMesh_mu8pm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2132693316]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=89988800]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_omy8q")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1276224826]
+layout_mode = 0
+offset_right = 687.0
+offset_bottom = 75.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "Speed Out"
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1948276811]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 687.0
+grow_vertical = 2
+theme_override_constants/separation = 94
+alignment = 1
+
+[node name="LevelSelect" type="TextureButton" parent="CanvasLayer/Control/MainMenuButtons" unique_id=865684907]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_i5wg5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MainMenuButtons/LevelSelect" unique_id=198321855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "> Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/Control/MainMenuButtons" unique_id=2030468527]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_i5wg5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MainMenuButtons/Quit" unique_id=1422331260]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "> Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelectButtons" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1066571871]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -309.75
+offset_right = 687.0
+offset_bottom = 309.75
+grow_vertical = 2
+theme_override_constants/separation = 43
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=1631954379]
+layout_mode = 2
+
+[node name="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=817721026 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 1
+level = ExtResource("6_joh67")
+
+[node name="TextureButton2" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=451596219 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 2
+level = null
+
+[node name="TextureButton3" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1757372699 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 3
+level = null
+
+[node name="TextureButton4" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1174362623 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 4
+level = null
+
+[node name="TextureButton5" parent="CanvasLayer/Control/LevelSelectButtons/HBoxContainer" unique_id=1158165910 instance=ExtResource("5_3c04x")]
+layout_mode = 2
+number = 5
+level = null
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/Control/LevelSelectButtons" unique_id=1965101293]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_i5wg5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelectButtons/BackButton" unique_id=1574737898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "> Go Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=73497]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.3850315, 2.4767132)
+
+[connection signal="pressed" from="CanvasLayer/Control/MainMenuButtons/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MainMenuButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/LevelSelectButtons/BackButton" to="." method="_on_back_button_pressed"]

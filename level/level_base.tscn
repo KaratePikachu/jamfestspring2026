@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhv3a8b07vq6e"]
+
+[ext_resource type="Script" uid="uid://ck78rkigcxqns" path="res://level/level_base.gd" id="1_d8qi5"]
+[ext_resource type="MeshLibrary" uid="uid://b5vjgtfi7j6hm" path="res://meshlib.tres" id="1_nmr65"]
+[ext_resource type="PackedScene" uid="uid://d010t5qxfdoua" path="res://player/player.tscn" id="2_vmt1o"]
+
+[node name="LevelBase" type="Node3D" unique_id=1165694411]
+script = ExtResource("1_d8qi5")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1669079711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -4, 2)
+mesh_library = ExtResource("1_nmr65")
+cell_size = Vector3(4, 2, 4)
+data = {
+"cells": PackedInt32Array(65535, 65535, 0, 0, 65535, 0, 1, 65535, 0, 65534, 65535, 0, 65533, 65535, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="Player" parent="." unique_id=1543801142 instance=ExtResource("2_vmt1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9048065, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1672650812]
+transform = Transform3D(0.9428801, 0.16656612, -0.28850096, 0, 0.8660254, 0.5, 0.33313224, -0.47144005, 0.8165581, 0, 13.891717, 6.476713)
+
+[node name="Props" type="Node3D" parent="." unique_id=660610485]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2093097310]

@@ -7,16 +7,22 @@ extends CharacterBody3D
 var internal_velocity : Vector3
 var airborne : bool = true
 
+@onready var player_model : PlayerModel = $PlayerModel
 @onready var movement_component : MovementComponent = $MovementComponent
 @onready var jump_component : JumpComponent = $JumpComponent
 @onready var gravity_component : GravityComponent = $GravityComponent
 @onready var rewind_component : RewindComponent = $RewindComponent
+
 
 func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
 	
+	if player_model.winning:
+		return
+	
+	$PlayerCamera.process(delta)
 	
 	if rewind_component.rewinding or rewind_component.ready_to_launch:
 		gravity_component.on_jump()
@@ -48,3 +54,10 @@ func _physics_process(delta: float) -> void:
 	movement_component.wall_tech()
 	
 	pass
+
+func win_level() -> void:
+	if player_model.winning:
+		return
+	player_model.win_animation()
+	await player_model.animation_player.animation_finished
+	get_tree().change_scene_to_file("res://ui/main_menu/main_menu.tscn")

@@ -7,8 +7,13 @@ extends Node3D
 @export var white_material : StandardMaterial3D
 
 var jumping : bool = false
+var winning : bool = false
 
 @export var meshes : Array[MeshInstance3D]
+
+func win_animation() -> void:
+	winning = true
+	animation_player.play("Skeleton|Win",0.2)
 
 func jump() -> void:
 	jumping = true
@@ -20,6 +25,8 @@ func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	
+	if winning:
+		return
 	if jumping:
 		return
 	if not is_zero_approx(player.velocity.x):
