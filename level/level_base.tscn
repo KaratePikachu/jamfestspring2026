@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbcq3u621f11g" path="res://Assets/battery.png" id="5_6tqrk"]
 [ext_resource type="PackedScene" uid="uid://dt67wtmvb5ghs" path="res://level/exit_door/exit_door.tscn" id="6_6tqrk"]
 [ext_resource type="PackedScene" uid="uid://ctiesww7jlp57" path="res://pause_menu.tscn" id="6_kvcyj"]
+[ext_resource type="Texture2D" uid="uid://dxbxlfffxs0eo" path="res://Assets/Environment/Background/Background.png" id="8_n27om"]
 
 [node name="LevelBase" type="Node3D" unique_id=1165694411 node_paths=PackedStringArray("player")]
 script = ExtResource("1_d8qi5")
@@ -72,3 +73,11 @@ layout_mode = 1
 [node name="ExitDoor" parent="." unique_id=1259731798 node_paths=PackedStringArray("level") instance=ExtResource("6_6tqrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.357049, -1.7704439, 0)
 level = NodePath("..")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2073265925]
+
+[node name="Sprite3D" type="Sprite3D" parent="ParallaxBackground" unique_id=1920529378]
+
+[node name="Sprite3D2" type="Sprite3D" parent="ParallaxBackground" unique_id=2146259925]
+transform = Transform3D(4.9713774, 0, 0, 0, 4.9713774, 0, 0, 0, 1, 0, 16.54229, -13.416182)
+texture = ExtResource("8_n27om")
