@@ -54,7 +54,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 687.0
 grow_vertical = 2
-theme_override_constants/separation = 94
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="LevelSelect" type="TextureButton" parent="CanvasLayer/Control/MainMenuButtons" unique_id=865684907]
@@ -72,6 +72,24 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "> Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="CanvasLayer/Control/MainMenuButtons" unique_id=2082143506]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_i5wg5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MainMenuButtons/Credits" unique_id=1441167561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "> Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -153,9 +171,58 @@ text = "> Go Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=2044492947]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011284722
+anchor_top = 0.545
+anchor_right = 0.011284722
+anchor_bottom = 0.545
+offset_top = -280.16003
+offset_right = 674.0
+offset_bottom = 280.59
+grow_vertical = 2
+theme_override_constants/separation = 43
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Credits" unique_id=831570212]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "Credits:"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Credits" unique_id=491400341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "> Kaiden Z
+
+> Joan Production
+
+> Song by boksed"
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/Control/Credits" unique_id=247743692]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_i5wg5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Credits/BackButton" unique_id=1651949610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "> Go Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=73497]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.3850315, 2.4767132)
 
 [connection signal="pressed" from="CanvasLayer/Control/MainMenuButtons/LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MainMenuButtons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MainMenuButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/LevelSelectButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Credits/BackButton" to="." method="_on_back_button_pressed"]

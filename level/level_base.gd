@@ -44,6 +44,7 @@ func win(player : Player) -> void:
 	if level_num < MainMenu.levels.size():
 		get_tree().change_scene_to_file(MainMenu.levels[level_num])
 	else:
+		GameMusic.play_muffled()
 		get_tree().change_scene_to_file("res://ui/main_menu/main_menu.tscn")
 
 func battery_collected() -> void:

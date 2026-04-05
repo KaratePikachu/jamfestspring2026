@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c7suyk8hnffyx"]
 
 [ext_resource type="PackedScene" uid="uid://dhv3a8b07vq6e" path="res://level/level_base.tscn" id="1_lfual"]
+[ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="2_xfvpt"]
+[ext_resource type="PackedScene" uid="uid://xpnst6ktv7r7" path="res://Assets/Environment/Door/Door.fbx" id="3_lfual"]
 
 [node name="Level6" unique_id=1165694411 instance=ExtResource("1_lfual")]
 level_num = 6
@@ -14,3 +16,28 @@ metadata/_editor_floor_ = Vector3(0, 43, 0)
 
 [node name="ExitDoor" parent="." index="5" unique_id=1259731798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 52.2, 0)
+
+[node name="Battery" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="0" unique_id=33444232 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.8677741, 0, 0.4969588, 0, 1, 0, -0.4969588, 0, 0.8677741, 58.48038, -2.0035734, -0.8793287)
+
+[node name="Battery2" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="1" unique_id=1725750864 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.7546295, 0, 0.6561513, 0, 1, 0, -0.6561513, 0, 0.7546295, 59.094307, -2.0035734, -1.496692)
+
+[node name="Battery3" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="2" unique_id=1983478520 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.7546295, 0, 0.6561513, 0, 1, 0, -0.6561513, 0, 0.7546295, 58.73063, -1.4424009, -1.1717775)
+
+[node name="Battery4" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="3" unique_id=218770177 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.52889764, 0, -0.84868574, 0, 1, 0, 0.84868574, 0, 0.52889764, 64.97373, -2.0035734, -1.6664168)
+
+[node name="Battery5" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="4" unique_id=357945014 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.6837706, 0, -0.7296969, 0, 1, 0, 0.7296969, 0, 0.6837706, 65.61351, -2.0035734, -1.0758839)
+
+[node name="Battery6" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="5" unique_id=261355276 instance=ExtResource("2_xfvpt")]
+transform = Transform3D(0.6837706, 0, -0.7296969, 0, 1, 0, 0.7296969, 0, 0.6837706, 65.09393, -1.4424009, -1.2446407)
+
+[node name="Door8" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="6" unique_id=1262107834 instance=ExtResource("3_lfual")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.95497, 3.9669356, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="7" unique_id=1968329025]
+transform = Transform3D(0.23847568, -0.23324174, 0.9427235, 0.057200115, 0.9724188, 0.22611912, -0.9694626, -1.5370526e-08, 0.24523968, -19.066864, 6.1985116, 0.55554724)
+light_energy = 5.0

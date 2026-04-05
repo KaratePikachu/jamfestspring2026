@@ -16,6 +16,7 @@ var animation_options : Array[StringName] = ["Skeleton|Idle","Skeleton|Walk","Sk
 
 @onready var main_menu_buttons : VBoxContainer = $CanvasLayer/Control/MainMenuButtons
 @onready var level_select_buttons : VBoxContainer = $CanvasLayer/Control/LevelSelectButtons
+@onready var credits : VBoxContainer = $CanvasLayer/Control/Credits
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,9 +37,12 @@ func _on_level_select_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	level_select_buttons.hide()
+	credits.hide()
 	main_menu_buttons.show()
 	
-
+func _on_credits_pressed() -> void:
+	main_menu_buttons.hide()
+	credits.show()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
