@@ -1,6 +1,7 @@
 extends Panel
 
 func _ready() -> void:
+	GameMusic.play_normal()
 	hide()
 
 func _input(event: InputEvent) -> void:

@@ -22,6 +22,8 @@ func win_animation() -> void:
 	scale = Vector3(1,1,1)
 	rotation_degrees = Vector3(0,180,0)
 	var tween : Tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self,"rotation_degrees",Vector3(0,180,0),1.0)
 	tween.tween_property(self,"global_position:z",-5,1.666)
 	animation_player.play("Skeleton|Walk",0.5)
 	await animation_player.animation_finished

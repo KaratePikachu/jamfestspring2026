@@ -44,7 +44,9 @@ offset_right = 687.0
 offset_bottom = 75.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 75
-text = "Speed Out"
+text = "Re/Speed"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1948276811]
 layout_mode = 1
