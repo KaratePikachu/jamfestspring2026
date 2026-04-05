@@ -14,7 +14,7 @@ var winning : bool = false
 @export var meshes : Array[MeshInstance3D]
 
 func win_animation() -> void:
-	if winning:
+	if winning or player.losing:
 		return
 	winning = true
 	animation_player.play("Skeleton|Win",0.2)

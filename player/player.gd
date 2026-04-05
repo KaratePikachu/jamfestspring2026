@@ -21,9 +21,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if player_model.winning or losing:
+	if player_model.winning:
 		internal_velocity.x = 0
+	
+	if player_model.winning or losing:
 		gravity(delta)
+		movement_component.decelerate()
 		velocity = internal_velocity
 		move_and_slide()
 		return

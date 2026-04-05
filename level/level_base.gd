@@ -10,6 +10,13 @@ extends Node3D
 
 #@export var gate : Gate
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("kys"):
+		if is_zero_approx(time_left):
+			player.player_model.animation_player.speed_scale = 3
+		
+		time_left = 0
+
 var time_left : float:
 	set(new_val):
 		time_left = new_val

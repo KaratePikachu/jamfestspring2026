@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://gcbk6vy3epai"]
+
+[ext_resource type="Script" uid="uid://bm0g0ktlf7r4b" path="res://game_music.gd" id="1_1y0jw"]
+[ext_resource type="AudioStream" uid="uid://s2dh52eohpcf" path="res://muffled_audio.mp3" id="2_wxbow"]
+[ext_resource type="AudioStream" uid="uid://uid280ndp3mc" path="res://normal_audio.mp3" id="3_wxbow"]
+
+[node name="GameMusic" type="AudioStreamPlayer" unique_id=390982860]
+autoplay = true
+script = ExtResource("1_1y0jw")
+muffled_song = ExtResource("2_wxbow")
+normal_song = ExtResource("3_wxbow")

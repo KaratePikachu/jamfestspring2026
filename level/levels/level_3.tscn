@@ -19,5 +19,11 @@ pixel_size = 0.01
 text = "> X to \"double jump\""
 font = ExtResource("3_se3ff")
 
-[node name="ExitDoor" parent="." index="6" unique_id=1259731798]
+[node name="Label3D3" type="Label3D" parent="." index="6" unique_id=1944020477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.131065, 3.8201113, -3.1307874)
+pixel_size = 0.01
+text = "> R to \"die\""
+font = ExtResource("3_se3ff")
+
+[node name="ExitDoor" parent="." index="7" unique_id=1259731798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -1.8, 0)
