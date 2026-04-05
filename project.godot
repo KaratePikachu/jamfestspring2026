@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameMusic="*uid://gcbk6vy3epai"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
