@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhv3a8b07vq6e" path="res://level/level_base.tscn" id="1_lfual"]
 
 [node name="Level6" unique_id=1165694411 instance=ExtResource("1_lfual")]
-level_num = 1
+level_num = 6
 max_time = 45.0
 
 [node name="GridMap" parent="." index="0" unique_id=1669079711]

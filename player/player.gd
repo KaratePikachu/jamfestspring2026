@@ -7,6 +7,8 @@ extends CharacterBody3D
 var internal_velocity : Vector3
 var airborne : bool = true
 
+var losing : bool = false
+
 @onready var player_model : PlayerModel = $PlayerModel
 @onready var movement_component : MovementComponent = $MovementComponent
 @onready var jump_component : JumpComponent = $JumpComponent
@@ -19,18 +21,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if player_model.winning:
+	if player_model.winning or losing:
+		internal_velocity.x = 0
+		gravity(delta)
+		velocity = internal_velocity
+		move_and_slide()
 		return
 	
 	$PlayerCamera.process(delta)
 	
-	if rewind_component.rewinding or rewind_component.ready_to_launch:
-		gravity_component.on_jump()
-	elif is_on_floor():
-		internal_velocity.y = max(0,internal_velocity.y)
-		pass
-	else:
-		gravity_component.gravity(delta)
+	gravity(delta)
 	jump_component.process()
 	
 	movement_component.walk()
@@ -54,3 +54,21 @@ func _physics_process(delta: float) -> void:
 	movement_component.wall_tech()
 	
 	pass
+
+func gravity(delta : float) -> void:
+	if rewind_component.rewinding or rewind_component.ready_to_launch:
+		gravity_component.on_jump()
+	elif is_on_floor():
+		internal_velocity.y = max(0,internal_velocity.y)
+		pass
+	else:
+		gravity_component.gravity(delta)
+
+func lose() -> void:
+	if losing or player_model.winning:
+		return
+	
+	losing = true
+	player_model.lose_animation()
+	await player_model.animation_player.animation_finished
+	get_tree().reload_current_scene()

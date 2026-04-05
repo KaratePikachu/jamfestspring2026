@@ -24,13 +24,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not player.rewind_component.rewinding and not player.player_model.winning:
-		time_left -= delta
+		time_left = move_toward(time_left, 0, delta)
+		if is_zero_approx(time_left):
+			player.lose()
 
 func win(player : Player) -> void:
 	if player.player_model.winning:
 		return
 	player.player_model.win_animation()
-	await player.player_model.animation_player.animation_finished
+	await player.player_model.finished_win_animation
 	
 	if level_num < MainMenu.levels.size():
 		get_tree().change_scene_to_file(MainMenu.levels[level_num])

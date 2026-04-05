@@ -14,9 +14,18 @@ var winning : bool = false
 @export var meshes : Array[MeshInstance3D]
 
 func win_animation() -> void:
+	if winning:
+		return
 	winning = true
 	animation_player.play("Skeleton|Win",0.2)
 	await animation_player.animation_finished
+	scale = Vector3(1,1,1)
+	rotation_degrees = Vector3(0,180,0)
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property(self,"global_position:z",-5,1.666)
+	animation_player.play("Skeleton|Walk",0.5)
+	await animation_player.animation_finished
+	finished_win_animation.emit()
 	
 
 func jump() -> void:
@@ -25,11 +34,14 @@ func jump() -> void:
 	await animation_player.animation_finished
 	jumping = false
 
+func lose_animation() -> void:
+	animation_player.play("Skeleton|Lose",0.2,1.0)
+
 func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	
-	if winning:
+	if winning or player.losing:
 		return
 	if jumping:
 		return
