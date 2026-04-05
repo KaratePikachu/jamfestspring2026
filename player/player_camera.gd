@@ -5,6 +5,7 @@ extends Camera3D
 
 @export var velocity_track_strength : float
 @export var follow_curve : Curve
+@export var follow_curve_y : Curve
 
 func _ready() -> void:
 	position.z = 10.67
@@ -22,7 +23,7 @@ func process(delta: float) -> void:
 	if not is_zero_approx(dist_x) or not is_zero_approx(dist_y):
 		
 		var travel_x : float = follow_curve.sample(dist_x)
-		var travel_y : float = follow_curve.sample(dist_y)*0.25
+		var travel_y : float = follow_curve_y.sample(dist_y)
 		
 		global_position.x = move_toward(global_position.x,target.x,travel_x)
 		global_position.y = move_toward(global_position.y,target.y,travel_y)

@@ -37,7 +37,7 @@ func process() -> void:
 	if not rewinding and Input.is_action_just_pressed("rewind") and remaining_rewind_cooldown == 0:
 		recording = true
 		og_position = player.global_position
-		launch_vector = player.velocity.normalized().rotated(Vector3.FORWARD,deg_to_rad(180))
+		#launch_vector = player.velocity.normalized().rotated(Vector3.FORWARD,deg_to_rad(180))
 	elif recording and ( Input.is_action_just_released("rewind") or ghost_trail.size() > 30 ):
 		recording = false
 		rewinding = true
@@ -45,9 +45,12 @@ func process() -> void:
 		#print(num_points)
 		
 		var curve : Curve3D = rewind_path.curve
-		launch_vector *= clampf(1.2*rewind_path.curve.point_count,0,30)
+		
 		
 		if num_points >= 2:
+			launch_vector = curve.get_point_position(1).direction_to(curve.get_point_position(0))
+			launch_vector *= clampf(1.2*rewind_path.curve.point_count,0,30)
+			
 			path_follow.progress_ratio = 1
 			#
 			#remote_transform.remote_path = player.get_path()

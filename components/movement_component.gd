@@ -42,8 +42,11 @@ func decelerate() -> void:
 
 func wall_tech() -> void:
 	if is_zero_approx(player.velocity.x): ##Slam into wall
-		if player.internal_velocity.dot(Vector3(Input.get_axis("move_left","move_right"),0,0)) <= -10:
-			print("Wall Flick")
+		
+		
+		#print(player.internal_velocity.dzzot(player.get_wall_normal()))
+		#
+		if player.internal_velocity.dot(player.get_wall_normal()) <= -15:
 			player.internal_velocity.x = -player.internal_velocity.x
 		else:
 			player.internal_velocity.x *= wall_decceleration

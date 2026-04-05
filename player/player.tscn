@@ -32,6 +32,11 @@ _limits = [0.0, 1.0, 0.0, 15.0]
 _data = [Vector2(0, 0.08988774), 0.0, 0.0, 0, 0, Vector2(3.1999998, 0.48314613), 0.0, 0.0, 0, 0, Vector2(4.8750005, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_rgyib"]
+_limits = [0.0, 1.0, 0.0, 15.0]
+_data = [Vector2(0, 0.023), 0.0, 0.0, 0, 0, Vector2(3.2, 0.121), 0.0, 0.0, 0, 0, Vector2(4.875, 0.25), 0.0, 0.0, 0, 0, Vector2(7.275, 0.6966293), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="Player" type="CharacterBody3D" unique_id=1543801142]
 collision_layer = 3
 script = ExtResource("1_0tyyh")
@@ -84,3 +89,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.67)
 v_offset = 1.5
 player = NodePath("..")
 follow_curve = SubResource("Curve_boad6")
+follow_curve_y = SubResource("Curve_rgyib")
