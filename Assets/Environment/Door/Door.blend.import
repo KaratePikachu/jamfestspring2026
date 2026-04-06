@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cub1w2gfbgbr6"
-path="res://.godot/imported/Door.blend-1171071cb7adc0fed834252ce0415b46.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Environment/Door/Door.blend"
-dest_files=["res://.godot/imported/Door.blend-1171071cb7adc0fed834252ce0415b46.scn"]
 
 [params]
 
