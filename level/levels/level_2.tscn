@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cj3ece51e36hn" path="res://Assets/Environment/Wheel/Wheel.fbx" id="4_vuqo5"]
 [ext_resource type="PackedScene" uid="uid://d2flqi5b2k0du" path="res://Assets/Environment/Barrel/Barrel.fbx" id="5_vht67"]
 [ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="6_7s7um"]
+[ext_resource type="PackedScene" uid="uid://4ner1y8wkaiy" path="res://Assets/Environment/IBeam/IBeam.fbx" id="7_oe6fm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ctxq"]
 size = Vector3(2.5095215, 2.5993652, 5.2041016)
@@ -130,3 +131,50 @@ transform = Transform3D(0.88274264, 0, -0.46985677, 0, 1, 0, 0.46985677, 0, 0.88
 
 [node name="Wheel4" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="9" unique_id=1712584081 instance=ExtResource("4_vuqo5")]
 transform = Transform3D(0.460461, 0.34904048, 0.8161779, -0.6040846, 0.7969202, 0, -0.65042865, -0.4930405, 0.57780063, 106.883675, -5.6400013, -0.8428619)
+
+[node name="Beams" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="10" unique_id=358217215]
+
+[node name="IBeam3" parent="Decorations/Beams" index="0" unique_id=664792970 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams" index="1" unique_id=397815448 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams" index="2" unique_id=782100026 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)
+
+[node name="Beams2" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="11" unique_id=636822493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -2, 0)
+
+[node name="IBeam3" parent="Decorations/Beams2" index="0" unique_id=649645293 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams2" index="1" unique_id=57060800 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams2" index="2" unique_id=674075455 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)
+
+[node name="Beams3" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="12" unique_id=1857340734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -2, 0)
+
+[node name="IBeam3" parent="Decorations/Beams3" index="0" unique_id=1265988954 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams3" index="1" unique_id=1662739546 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams3" index="2" unique_id=1953954612 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)
+
+[node name="Beams4" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="13" unique_id=1346167804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -2, 0)
+
+[node name="IBeam3" parent="Decorations/Beams4" index="0" unique_id=334220863 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams4" index="1" unique_id=1823599379 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams4" index="2" unique_id=1953003106 instance=ExtResource("7_oe6fm")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)

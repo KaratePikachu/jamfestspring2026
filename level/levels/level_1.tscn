@@ -66,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.30753, -1.9876195, -0.8922
 transform = Transform3D(0.77082145, 0.5480171, 0.32482544, -0.5794377, 0.81501657, 0, -0.2647381, -0.18821609, 0.94577396, 65.75226, -1.64, -0.96997666)
 
 [node name="IBeam" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="6" unique_id=232137985 instance=ExtResource("5_hosfi")]
-transform = Transform3D(0.9184809, 0, -0.39546537, 0, 1, 0, 0.39546537, 0, 0.9184809, 18.642159, -1.5, -1.6804228)
+transform = Transform3D(0.49301708, 0, -1.9960837, 0, 1, 0, 0.6613128, 0, 1.4881058, 18.642159, -1.5, -1.6804228)
 
 [node name="Wheel2" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="7" unique_id=1197465210 instance=ExtResource("4_hosfi")]
 transform = Transform3D(0.93813694, -0.34626442, 0, 0.34626442, 0.93813694, 0, 0, 0, 1, 18.159561, -0.6683386, -1.7047496)
@@ -85,5 +85,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08313465, -2, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99988, 7.824614, 3.9183755)
 light_energy = 5.0
 
+[node name="Beams4" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="12" unique_id=1090653608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.685026, 0.117263794, 0)
+
+[node name="IBeam3" parent="Decorations/Beams4" index="0" unique_id=664792970 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams4" index="1" unique_id=1039453229 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams4" index="2" unique_id=1995429517 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)
+
+[node name="Beams5" type="Node3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="13" unique_id=1955915916]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 67.6053, 0.22426796, -3.7536216)
+
+[node name="IBeam3" parent="Decorations/Beams5" index="0" unique_id=935168146 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 26.932785, -1.9808834, -1.8548346)
+
+[node name="IBeam2" parent="Decorations/Beams5" index="1" unique_id=1184941065 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 29.039577, -0.7187028, -1.8548346)
+
+[node name="IBeam" parent="Decorations/Beams5" index="2" unique_id=1031639843 instance=ExtResource("5_hosfi")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 8.157411, 28, -1.342359, -1.8548346)
+
 [node name="Door" parent="." index="13" unique_id=1090047623 instance=ExtResource("6_eq12i")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 54.06303, 6.8474617, -2)
+
+[node name="IBeam" parent="." index="14" unique_id=1161227501 instance=ExtResource("5_hosfi")]
+transform = Transform3D(-5.960459e-08, 0, 69.936005, 0, 1, 0, -0.9999991, 0, -4.1685107e-06, 22, 5, -2)
+
+[node name="IBeam2" parent="." index="15" unique_id=1578302514 instance=ExtResource("5_hosfi")]
+transform = Transform3D(-5.960459e-08, 0, 69.936005, 0, 1, 0, -0.9999991, 0, -4.1685107e-06, 22, 5, 1.7432494)

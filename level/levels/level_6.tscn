@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhv3a8b07vq6e" path="res://level/level_base.tscn" id="1_lfual"]
 [ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="2_xfvpt"]
 [ext_resource type="PackedScene" uid="uid://xpnst6ktv7r7" path="res://Assets/Environment/Door/Door.fbx" id="3_lfual"]
+[ext_resource type="PackedScene" uid="uid://yogqg8j8esrn" path="res://Assets/Environment/Car/Car.fbx" id="4_8rsbt"]
 
 [node name="Level6" unique_id=1165694411 instance=ExtResource("1_lfual")]
 level_num = 6
@@ -41,3 +42,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.
 [node name="SpotLight3D" type="SpotLight3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="7" unique_id=1968329025]
 transform = Transform3D(0.23847568, -0.23324174, 0.9427235, 0.057200115, 0.9724188, 0.22611912, -0.9694626, -1.5370526e-08, 0.24523968, -19.066864, 6.1985116, 0.55554724)
 light_energy = 5.0
+
+[node name="Car2" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="8" unique_id=514099871 instance=ExtResource("4_8rsbt")]
+transform = Transform3D(0.6149203, 0.030163687, 0.7880122, 0.35470307, 0.881899, -0.31054774, -0.7043145, 0.4704723, 0.53159857, 68.64098, 1.9478614, -2.3517923)
+
+[node name="Car3" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="9" unique_id=1426085613 instance=ExtResource("4_8rsbt")]
+transform = Transform3D(0.46475545, -0.88536406, -0.01152496, 0.23209408, 0.13437378, -0.96336734, 0.8544792, 0.44505537, 0.26793855, 60.85917, -0.502754, -2.11233)
+
+[node name="Car4" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="10" unique_id=751873531 instance=ExtResource("4_8rsbt")]
+transform = Transform3D(-0.7762574, 0.0926314, -0.6235734, 0.35470307, 0.881899, -0.31054774, 0.52116245, -0.4622483, -0.7174374, 61.983322, -2.2642896, -2.3517923)
+
+[node name="Car5" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="11" unique_id=279616525 instance=ExtResource("4_8rsbt")]
+transform = Transform3D(-0.91741425, 0.39235914, 0.06637185, 0.37836042, 0.80840516, 0.450915, 0.12326543, 0.43878826, -0.8900959, 61.983322, -0.40337777, -2.3517923)

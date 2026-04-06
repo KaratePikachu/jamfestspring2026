@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://crxrgr01u5bbq"]
 
+[ext_resource type="Texture2D" uid="uid://76uqfe23p34i" path="res://Assets/Environment/Textures/Dirt.png" id="1_8s8ld"]
 [ext_resource type="Material" uid="uid://wbk4vjsx85pj" path="res://level/WallTexture.tres" id="1_tyqlv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ay0fa"]
+albedo_texture = ExtResource("1_8s8ld")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6ly18"]
 material = ExtResource("1_tyqlv")
@@ -20,6 +24,7 @@ points = PackedVector3Array(2, -1, 2, 2, -1, -2, -2, -1, -2, -2, -1, 2, 2, 1, 2,
 [node name="MeshLib" type="Node3D" unique_id=1337695061]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1082683326]
+material_override = SubResource("StandardMaterial3D_ay0fa")
 mesh = SubResource("BoxMesh_6ly18")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1148673291]

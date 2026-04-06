@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xpnst6ktv7r7" path="res://Assets/Environment/Door/Door.fbx" id="3_ayajj"]
 [ext_resource type="FontFile" uid="uid://bjmysapvfhjs6" path="res://Assets/public-pixel-font/PublicPixel-rv0pA.ttf" id="3_se3ff"]
 [ext_resource type="PackedScene" uid="uid://dhnl8td8lwuqa" path="res://Assets/Environment/Battery/Battery.fbx" id="4_nr4ye"]
+[ext_resource type="PackedScene" uid="uid://4ner1y8wkaiy" path="res://Assets/Environment/IBeam/IBeam.fbx" id="5_se3ff"]
 
 [sub_resource type="Gradient" id="Gradient_blww0"]
 offsets = PackedFloat32Array(0)
@@ -45,7 +46,7 @@ font_size = 50
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -1.8, 0)
 
 [node name="Sprite3D5" type="Sprite3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="0" unique_id=735571335]
-transform = Transform3D(148.0797, 0, 0, 0, 25.366165, 0, 0, 0, 1, 30.277, 3.58, -2)
+transform = Transform3D(148.0797, 0, 0, 0, 25.366165, 0, 0, 0, 1, 30.287762, 3.5799994, -1.9836817)
 texture = SubResource("GradientTexture2D_j4cam")
 
 [node name="Door" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="1" unique_id=1262107834 instance=ExtResource("3_ayajj")]
@@ -95,3 +96,6 @@ light_energy = 5.0
 [node name="SpotLight3D3" type="SpotLight3D" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="15" unique_id=1166673209]
 transform = Transform3D(-0.11958379, 0.51121336, -0.85109377, 0.097227246, 0.8591548, 0.5023942, 0.9880519, -0.022671288, -0.15244485, 43.424305, 1.0342467, -0.15986538)
 light_energy = 5.0
+
+[node name="IBeam" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="16" unique_id=664792970 instance=ExtResource("5_se3ff")]
+transform = Transform3D(-5.960459e-08, 0, 69.936005, 0, 1, 0, -0.9999991, 0, -4.1685107e-06, 22, 5, -2)

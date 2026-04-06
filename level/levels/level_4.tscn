@@ -59,3 +59,33 @@ transform = Transform3D(0.15562028, 0.6899013, 0.7069785, -0.6493484, 0.6107811,
 
 [node name="Battery2" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="8" unique_id=32974811 instance=ExtResource("4_cgnem")]
 transform = Transform3D(0.5104979, 0, 0.859879, 0, 1, 0, -0.859879, 0, 0.5104979, 21.090286, -2.0264482, -2.044396)
+
+[node name="Wheel3" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="9" unique_id=1422345686 instance=ExtResource("3_p1lem")]
+transform = Transform3D(0.15562028, 0.6899013, 0.7069785, -0.6493484, 0.6107811, -0.45309284, -0.7443984, -0.3885649, 0.5430362, 68.756546, -5.7406025, -0.97486174)
+
+[node name="Wheel4" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="10" unique_id=223244225 instance=ExtResource("3_p1lem")]
+transform = Transform3D(0.15562025, 0.6899013, 0.7069785, 0.7443984, 0.38856494, -0.54303616, -0.6493484, 0.61078113, -0.45309293, 69.101845, -5.7406025, -1.2934847)
+
+[node name="Wheel5" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="11" unique_id=1998089081 instance=ExtResource("3_p1lem")]
+transform = Transform3D(0.15562028, 0.6899013, 0.7069785, -0.6493484, 0.6107811, -0.45309284, -0.7443984, -0.3885649, 0.5430362, 68.756546, -5.7406025, 1.0251383)
+
+[node name="Wheel6" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="12" unique_id=1545264899 instance=ExtResource("3_p1lem")]
+transform = Transform3D(0.15562025, 0.6899013, 0.7069785, 0.7443984, 0.38856494, -0.54303616, -0.6493484, 0.61078113, -0.45309293, 69.101845, -5.7406025, 0.7065153)
+
+[node name="Wheel7" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="13" unique_id=1966141578 instance=ExtResource("3_p1lem")]
+transform = Transform3D(-0.7443984, -0.38856497, 0.54303616, -0.6493484, 0.6107811, -0.4530928, -0.15562028, -0.68990135, -0.70697856, 68.08851, -5.7406025, 0.038480043)
+
+[node name="Wheel8" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="14" unique_id=114666951 instance=ExtResource("3_p1lem")]
+transform = Transform3D(-0.6493484, 0.6107811, -0.45309296, 0.7443984, 0.38856494, -0.54303616, -0.15562023, -0.68990123, -0.70697844, 67.76989, -5.7406025, -0.30681872)
+
+[node name="Wheel9" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="15" unique_id=1975036051 instance=ExtResource("3_p1lem")]
+transform = Transform3D(-0.7443984, -0.38856497, 0.54303616, -0.6493484, 0.6107811, -0.4530928, -0.15562028, -0.68990135, -0.70697856, 70.08851, -5.7406025, 0.03847997)
+
+[node name="Wheel10" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="16" unique_id=567077418 instance=ExtResource("3_p1lem")]
+transform = Transform3D(-0.6493484, 0.6107811, -0.45309296, 0.7443984, 0.38856494, -0.54303616, -0.15562023, -0.68990123, -0.70697844, 69.76989, -5.7406025, -0.30681878)
+
+[node name="Battery3" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="17" unique_id=2041627766 instance=ExtResource("4_cgnem")]
+transform = Transform3D(0.866775, 0, 0.49869955, 0, 1, 0, -0.49869955, 0, 0.866775, 68.914154, -5.9876375, -0.06987381)
+
+[node name="Car5" parent="Decorations" parent_id_path=PackedInt32Array(277369920) index="18" unique_id=514099871 instance=ExtResource("2_gjafm")]
+transform = Transform3D(0.6263306, 0.7631087, -0.15929598, -0.13178997, -0.09774869, -0.98644656, -0.7683369, 0.6388353, 0.03934704, 76.88394, -4.6900845, -2.2671478)
