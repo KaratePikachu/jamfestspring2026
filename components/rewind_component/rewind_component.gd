@@ -23,6 +23,11 @@ var launch_vector : Vector3
 
 func _ready() -> void:
 	assert(rewind_path != null, "Null Rewind Path")
+	
+	if Input.is_action_pressed("rewind"):
+		Input.action_release("rewind")
+		Input.action_press("rewind")
+		print("bah")
 
 
 func process() -> void:

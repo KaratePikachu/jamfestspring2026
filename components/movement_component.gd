@@ -10,6 +10,11 @@ extends Node
 
 var sprinting : bool = false
 
+func _ready() -> void:
+	if Input.is_action_pressed("sprint"):
+		player.internal_velocity.x = 0
+		sprinting = true
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("sprint"):
 		player.internal_velocity.x = 0

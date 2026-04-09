@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cq38wiiawcedj"
-valid=false
+path="res://.godot/imported/Battery.blend-438791a5aa4adb9eac0b10c2ac8c69a7.scn"
 
 [deps]
 
 source_file="res://Assets/Environment/Battery/Battery.blend"
+dest_files=["res://.godot/imported/Battery.blend-438791a5aa4adb9eac0b10c2ac8c69a7.scn"]
 
 [params]
 

@@ -9,6 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://ctiesww7jlp57" path="res://pause_menu.tscn" id="6_kvcyj"]
 [ext_resource type="Texture2D" uid="uid://dxbxlfffxs0eo" path="res://Assets/Environment/Background/Background.png" id="8_n27om"]
 
+[sub_resource type="Animation" id="Animation_7gl6n"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_n27om"]
+resource_name = "new_record"
+length = 2.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gl6n"]
+_data = {
+&"RESET": SubResource("Animation_7gl6n"),
+&"new_record": SubResource("Animation_n27om")
+}
+
 [sub_resource type="Gradient" id="Gradient_n27om"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0.21176471, 0.21176471, 0.21176471, 1)
@@ -48,20 +74,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_tvde0")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1790717215]
+[node name="PauseMenu" parent="CanvasLayer/Control" unique_id=1026193892 instance=ExtResource("6_kvcyj")]
+visible = false
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=105327919]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 208.0
+offset_bottom = 85.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=1790717215]
+layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer" unique_id=851108215]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/MarginContainer" unique_id=851108215]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 texture = ExtResource("5_6tqrk")
 expand_mode = 5
 
-[node name="TimeLeft" type="Label" parent="CanvasLayer/Control/MarginContainer/TextureRect" unique_id=1239033527]
+[node name="TimeLeft" type="Label" parent="CanvasLayer/Control/VBoxContainer/MarginContainer/TextureRect" unique_id=1239033527]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.95
@@ -74,8 +107,40 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="PauseMenu" parent="CanvasLayer/Control" unique_id=1026193892 instance=ExtResource("6_kvcyj")]
+[node name="TargetLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=144827173]
+layout_mode = 2
+text = "Bronze: >12.3"
+horizontal_alignment = 1
+
+[node name="NewRecord" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=694792107]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/NewRecord" unique_id=1487720803]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "New Record!
+
+19.31
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewRecordMedal" type="Label" parent="CanvasLayer/Control/NewRecord" unique_id=60366069]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "Bronze Aquired"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewRecordAnimation" type="AnimationPlayer" parent="CanvasLayer/Control/NewRecord" unique_id=2043740853]
+root_node = NodePath("../Label")
+libraries/ = SubResource("AnimationLibrary_7gl6n")
 
 [node name="ExitDoor" parent="." unique_id=1259731798 node_paths=PackedStringArray("level") instance=ExtResource("6_6tqrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.357049, -1.7704439, 0)

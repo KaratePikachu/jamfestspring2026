@@ -1,6 +1,8 @@
 class_name MainMenu
 extends Node3D
 
+static var level_medals : LevelMedals
+
 static var levels : Array[String] = [
 	"res://level/levels/level_1.tscn",
 	"res://level/levels/level_2.tscn",
@@ -20,6 +22,9 @@ var animation_options : Array[StringName] = ["Skeleton|Idle","Skeleton|Walk","Sk
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().set_auto_accept_quit(false)
+	level_medals = LevelMedals.load()
+	
 	player_model.animation_player.animation_finished.connect(func(a) -> void:
 		#player_model.scale.x *= -1
 		#await get_tree().create_timer(1).timeout
@@ -29,6 +34,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	level_medals = LevelMedals.load()
 	pass
 
 func _on_level_select_pressed() -> void:
@@ -45,4 +51,11 @@ func _on_credits_pressed() -> void:
 	credits.show()
 
 func _on_quit_pressed() -> void:
+	LevelMedals.save(level_medals)
 	get_tree().quit()
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		LevelMedals.save(MainMenu.level_medals)
+		print("aaa")
+		get_tree().quit() # default behavior

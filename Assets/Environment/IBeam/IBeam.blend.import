@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2k72r6w0sgwl"
-valid=false
+path="res://.godot/imported/IBeam.blend-2b7d6e1331c739424b0c0b8d0f6675ed.scn"
 
 [deps]
 
 source_file="res://Assets/Environment/IBeam/IBeam.blend"
+dest_files=["res://.godot/imported/IBeam.blend-2b7d6e1331c739424b0c0b8d0f6675ed.scn"]
 
 [params]
 

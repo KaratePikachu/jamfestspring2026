@@ -18,7 +18,9 @@ fill_to = Vector2(1, 1)
 
 [node name="Level1" unique_id=1165694411 instance=ExtResource("1_8yts5")]
 level_num = 1
-max_time = 10.0
+max_time = 15.0
+silver_time = 11.0
+gold_time = 12.0
 
 [node name="GridMap" parent="." index="0" unique_id=1669079711]
 data = {

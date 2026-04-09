@@ -19,7 +19,9 @@ size = Vector3(3.3588867, 2.4490967, 9.7803955)
 
 [node name="Level2" unique_id=1165694411 instance=ExtResource("1_8pmo6")]
 level_num = 2
-max_time = 8.0
+max_time = 16.0
+silver_time = 9.5
+gold_time = 10.3
 
 [node name="GridMap" parent="." index="0" unique_id=1669079711]
 data = {

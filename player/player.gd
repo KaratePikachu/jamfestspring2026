@@ -5,7 +5,7 @@ extends CharacterBody3D
 
 
 var internal_velocity : Vector3
-var airborne : bool = true
+var airborne : bool = false
 
 var losing : bool = false
 
